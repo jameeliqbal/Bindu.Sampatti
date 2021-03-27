@@ -3,6 +3,49 @@
   "texts": {
     "Menu:Home": "Home",
     "Welcome": "Welcome",
-    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io."
+    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io.",
+
+    "Menu:Sampatti": "Sampatti",
+    "Menu:Procurement": "Procurement",
+    "Menu:Procurement.PurchaseRequisitions": "Purchase Requisitions",
+    "Menu:Procurement.Quotations": "Vendor Quotations",
+    "Menu:Procurement.PurchaseOrders": "Purchase Orders",
+    "Menu:Procurement.Vendors": "Vendors",
+
+    "Menu:Assets": "Assets",
+    "Menu:Assets.Register": "Register",
+    "Menu:Assets.Audit": "Audit",
+    "Menu:Assets.Tracking": "Tracking",
+    "Menu:Assets.Classes": "Classes",
+    "Menu:Assets.Components": "Components",
+    "Menu:Assets.Tagging": "Tagging",
+    "Menu:Assets.Depriciation": "Depriciation",
+    "Menu:Assets.DisposedAndRetired": "Disposed & Retired",
+
+    "Menu:Organization": "Organisation",
+    "Menu:Organization.Employees": "Employees",
+    "Menu:Organization.Departments": "Departments",
+    "Menu:Organization.Sections": "Sections",
+    "Menu:Organization.Locations": "Locations",
+
+    "Actions": "Actions",
+    "Edit": "Edit",
+    "Delete": "Delete",
+    "PRDeletionConfirmationMessage": "Do you wish to DELETE Purchase Requisition # {0}?",
+    "SuccessfullyDeleted": "Successfully Deleted!",
+
+    "PRNumber": "PR Number",
+    "Date": "Date",
+    "Requistioner": "Requisitioner",
+    "Department": "Department",
+    "Section": "Section",
+    "Status": "Status",
+
+    "NewPurchaseRequisition": "New Purchase Requisition",
+    "Update": "Update",
+
+    "Details": "Details"
+
+
   }
 }

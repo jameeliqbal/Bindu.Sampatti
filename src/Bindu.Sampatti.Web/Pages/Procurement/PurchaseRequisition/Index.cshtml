@@ -1,0 +1,33 @@
+﻿@page
+
+@using   Bindu.Sampatti.Web.Pages.Procurement.PurchaseRequisition
+@model IndexModel
+
+
+@section scripts
+{
+    <abp-script src="/Pages/Procurement/PurchaseRequisition/Index.js" />
+}
+
+@{
+    ViewData["Title"] = "Purchase Requisition - Procurement - Sampatti"; 
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>
+                    Purchase Requisition (PR)
+                </abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-right">
+                <abp-button id="NewPR" text="Create New PR" icon="plus" button-type="Primary" />
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" hoverable-rows="true"   id="prList" />
+    </abp-card-body>
+</abp-card>
+
