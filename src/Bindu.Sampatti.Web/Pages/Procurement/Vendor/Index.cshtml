@@ -1,0 +1,36 @@
+﻿@page
+
+@using Bindu.Sampatti.Web.Pages.Procurement.Vendor
+
+
+@model IndexModel
+
+
+@section scripts
+{
+    <abp-script src="/pages/procurement/vendor/index.js" />
+}
+
+@{
+    ViewData["Title"] = "Vendors - Procurement - Sampatti";
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>
+                    Vendors
+                </abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-right">
+                <abp-button id="NewVendor" text="New Vendor" icon="plus" button-type="Primary" />
+
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+
+    <abp-card-body>
+        <abp-table striped-rows="true" hoverable-rows="true" id="vendorsList" />
+    </abp-card-body>
+</abp-card>

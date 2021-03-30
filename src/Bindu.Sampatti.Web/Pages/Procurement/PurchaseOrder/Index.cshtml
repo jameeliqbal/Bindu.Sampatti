@@ -1,0 +1,35 @@
+﻿@page
+
+@using Bindu.Sampatti.Web.Pages.Procurement.PurchaseOrder
+
+@model IndexModel 
+
+@section scripts
+{
+    <abp-script src="/pages/procurement/purchaseorder/index.js" />
+}
+
+@{
+    ViewData["Title"] = "Purchase Orders - Procurement - Sampatti";
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>
+                    <i class="fas fa-clipboard-list"></i>
+                    Purchase Orders
+                </abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-right">
+                <abp-button id="NewPO" text="New PO" icon="plus" button-type="Primary" />
+
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+
+    <abp-card-body>
+        <abp-table striped-rows="true" hoverable-rows="true" id="poList" />
+    </abp-card-body>
+</abp-card>

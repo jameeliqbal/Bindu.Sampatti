@@ -33,9 +33,9 @@ namespace Bindu.Sampatti.Web.Menus
             var menuProcurement = new ApplicationMenuItem(SampattiMenus.Procurement, l["Menu:Procurement"], "#");
             context.Menu.Items.Insert(1,menuProcurement);
             menuProcurement.AddItem(new ApplicationMenuItem( SampattiMenus.PurchaseRequisitions, l["Menu:Procurement.PurchaseRequisitions"], "/Procurement/PurchaseRequisition"));
-            menuProcurement.AddItem(new ApplicationMenuItem(SampattiMenus.Quotations, l["Menu:Procurement.Quotations"], "#"));
-            menuProcurement.AddItem(new ApplicationMenuItem(SampattiMenus.PurchaseOrders, l["Menu:Procurement.PurchaseOrders"], "#"));
-            menuProcurement.AddItem(new ApplicationMenuItem(SampattiMenus.Vendors, l["Menu:Procurement.Vendors"], "#"));
+            menuProcurement.AddItem(new ApplicationMenuItem(SampattiMenus.Quotations, l["Menu:Procurement.Quotations"], "/Procurement/VendorQuotation"));
+            menuProcurement.AddItem(new ApplicationMenuItem(SampattiMenus.PurchaseOrders, l["Menu:Procurement.PurchaseOrders"], "/Procurement/PurchaseOrder"));
+            menuProcurement.AddItem(new ApplicationMenuItem(SampattiMenus.Vendors, l["Menu:Procurement.Vendors"], "/Procurement/Vendor"));
 
             var menuAssets = new ApplicationMenuItem(SampattiMenus.Assets, l["Menu:Assets"], "#");
             context.Menu.Items.Insert(2, menuAssets);

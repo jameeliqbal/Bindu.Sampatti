@@ -1,0 +1,33 @@
+﻿@page
+
+@using  Bindu.Sampatti.Web.Pages.Procurement.VendorQuotation
+@model  IndexModel
+
+@section scripts
+{
+    <abp-script src="/pages/procurement/vendorquotation/index.js"/>
+}
+
+@{
+    ViewData["Title"] = "Vendor Quotations - Procurement - Sampatti";
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>
+                    Vendor Quotations
+                </abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-right">
+                <abp-button id="NewQuotation" text="New Quotation" icon="plus" button-type="Primary"/>
+
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+
+    <abp-card-body>
+        <abp-table striped-rows="true" hoverable-rows="true" id="quotationList"/>
+    </abp-card-body>
+</abp-card>

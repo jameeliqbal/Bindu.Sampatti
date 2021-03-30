@@ -1,14 +1,14 @@
 ﻿$(function () {
     var l = abp.localization.getResource('Sampatti');
 
-    var dataTable = $("#prList").DataTable(
+    var dataTable = $("#poLineItems").DataTable(
         abp.libs.datatables.normalizeConfiguration({
             serverSide: true,
             paging: true,
             order: [[1, "asc"]],
             searching: false,
             scrollX: true,
-            ajax: "https://localhost:44353/api/testdatapr/getprs",
+            ajax: "https://localhost:44353/api/testdatapo/getpolines",
             columnDefs: [
                 {
                     title: l('Actions'),
@@ -17,16 +17,18 @@
                             [
                                 {
                                     text: l('Edit'),
+                                    iconClass: "fas fa-edit",
                                     //visible: abp.auth.isGranted('BookStore.Books.Edit'),
                                     action: function (data) {
-                                        editModal.open({ prNumber: data.record[1] });
+                                        editModal.open({ poNumber: data.record[1] });
                                     }
                                 },
                                 {
                                     text: l('Delete'),
+                                    iconClass: "fas fa-trash-alt",
                                     //visible: abp.auth.isGranted('BookStore.Books.Delete'),
                                     confirmMessage: function (data) {
-                                        return l('PRDeletionConfirmationMessage', data.record[1]);
+                                        return l('POLineItemDeletionConfirmationMessage', data.record[1]);
                                     },
                                     action: function (data) {
                                         acme.bookStore.books.book
@@ -41,14 +43,14 @@
                     }
                 },
                 {
-                    title:  l('PRNumber') ,
+                    title: l('Description'),
                     //data: "name"
-                    render: function (data) {
-                        return "<a href=\"purchaserequisition/lineitems/index?prNumber=" + data + "\">" + data + "</a>";
-                    }
+                    //render: function (data) {
+                    //    return "<a href=\"purchaserequisition/lineitems?prNumber=" + data + "\">" + data + "</a>";
+                    //}
                 },
                 {
-                    title: l('Date'),
+                    title: l('Quantity'),
                     //data: "publishDate",
                     //render: function (data) {
                     //    return luxon.DateTime.fromISO(data, {
@@ -57,40 +59,21 @@
                     //}
                 },
                 {
-                    title: l('Requisitioner'),
+                    title: l('Rate'),
                     //data: "authorName"
                 },
                 {
-                    title: l('Department'),
+                    title: l('Total'),
                     //data: "type",
                     //render: function (data) {
                     //    return l('Enum:BookType:' + data);
                     //}
-                },
-                       {
-                    title: l('Section'),
-                    //data: "price"
-                },
-                      
-            {
-                title: l('Status'),
-                //data: "type",
-                //render: function (data) {
-                //    return l('Enum:BookType:' + data);
-                //}
-               
-                } 
-                //{
-                //    title: l('CreationTime'),
-                //    data: "creationTime",
-                //    render: function (data) {
-                //        return luxon.DateTime.fromISO(data, {
-                //            locale: abp.localization.currentCulture.name
-                //        }).toLocaleString(luxon.DateTime.DATETIME_SHORT);
-                //    }
-                //}
+                }
 
-            ]
+            ],
+            select: true,
+            buttons: ['selectAll', 'selectNone']
+
 
         })
     );
@@ -108,8 +91,8 @@
     $('#NewPR').click(function (e) {
         e.preventDefault();
         createModal.open();
-        
+
     });
 
 
-});
+})

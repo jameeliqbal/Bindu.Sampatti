@@ -36,7 +36,7 @@
 
     "PRNumber": "PR Number",
     "Date": "Date",
-    "Requistioner": "Requisitioner",
+    "Requistioner": "Requestor",
     "Department": "Department",
     "Section": "Section",
     "Status": "Status",
@@ -44,8 +44,28 @@
     "NewPurchaseRequisition": "New Purchase Requisition",
     "Update": "Update",
 
-    "Details": "Details"
+    "Details": "Details",
+    "PRLineItemDeletionConfirmationMessage": "Do you wish to DELETE this item:  {0}?",
+    "Description": "Item Description",
+    "Quantity": "Quantity",
+    "Rate": "Rate",
+    "Total": "Total",
 
+    "QuotationNumber": "Quotation Number",
+    "QuotationDate": "Received On",
+    "Vendor": "Vendor",
+    "QuotationDeletionConfirmationMessage": "Do you wish to DELETE  Quotation #:  {0}?",
+    "RelatedPR": "Related PR #",
+    "VQLineItemDeletionConfirmationMessage": "Do you wish to DELETE this item:  {0}?",
+
+    "PONumber": "PO Number",
+    "PODate": "Issued On",
+    "PODeletionConfirmationMessage": "Do you wish to DELETE  PO #:  {0}?",
+    "RelatedVQ": "Related Quotation",
+    "POLineItemDeletionConfirmationMessage": "Do you wish to DELETE this item:  {0}?",
+
+    "VendorDeletionConfirmationMessage": "Do you wish to DELETE  Vendor {0}?",
+    "VendorName": "Vendor Name"
 
   }
 }

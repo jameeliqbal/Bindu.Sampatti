@@ -1,0 +1,75 @@
+﻿@page
+
+@using Bindu.Sampatti.Web.Pages.Procurement.Vendor.QuotationsReceived
+
+@model IndexModel
+
+
+@section scripts {
+    <abp-script-bundle>
+        <abp-script src="/Pages/procurement/vendor/quotations/Index.js" />
+    </abp-script-bundle>
+}
+
+@{
+    ViewData["Title"] = "Quotations Received - Vendor One > Procurment > Bindu Sampatti";
+}
+
+
+
+<a href="/procurement/vendor"><i class="fa fa-arrow-alt-circle-left"></i> Back to List</a>
+
+<h3>
+    Vendor One
+</h3>
+<h6><span class="badge badge-pill badge-primary">29AADCB2230M1ZP</span></h6>
+<small class="text-muted">
+    SRI GANESH COMPLEX<br />
+    DARBE PUTTUR -574202<br />
+    DAKSHINA KANNADA<br />
+    KARNATAKA<br />
+</small>
+<hr />
+<h4>0987654321</h4>
+<h5>vendor1@email.com</h5>
+<h6>www.vendorone.com</h6>
+
+
+<abp-nav nav-style="Pill">
+    <abp-nav-item>
+        <a abp-nav-link href="#" active="true"><i class="fas  fa fa-clipboard-list "></i> Quotations Received</a>
+    </abp-nav-item>
+    <abp-nav-item>
+        <a abp-nav-link href="https://localhost:44353/Procurement/vendor/purchaseorders/index?prNumber=PR0001">
+            <i class="fas  fa fa-shopping-cart "></i>
+            PO Issued
+        </a>
+    </abp-nav-item>
+
+</abp-nav>
+<abp-card class="mt-3">
+    @*<abp-card-header>
+            <abp-row>
+                <abp-column size-md="_6">
+                    <abp-card-title>
+                        <abp-button id="newQuotation" text="Add Quotation" icon="plus" button-type="Primary" />
+                    </abp-card-title>
+                </abp-column>
+                <abp-column size-md="_6" class="text-right">
+                    <abp-dropdown>
+                        <abp-dropdown-button button-type="Danger" text="Workflow" icon="stack-overflow" />
+                        <abp-dropdown-menu>
+                            <abp-dropdown-item href="#" Class="fas fa-check-square"> Approve</abp-dropdown-item>
+                            <abp-dropdown-divider />
+                            <abp-dropdown-item href="#" Class="fa fa-times-rectangle"> Reject</abp-dropdown-item>
+                        </abp-dropdown-menu>
+                    </abp-dropdown>
+                </abp-column>
+            </abp-row>
+        </abp-card-header>*@
+
+    <abp-card-body>
+        <abp-table striped-rows="true" hoverable-rows="true" id="quotationsList" />
+    </abp-card-body>
+</abp-card>
+

@@ -1,14 +1,14 @@
 ﻿$(function () {
     var l = abp.localization.getResource('Sampatti');
 
-    var dataTable = $("#prList").DataTable(
+    var dataTable = $("#quotationList").DataTable(
         abp.libs.datatables.normalizeConfiguration({
             serverSide: true,
             paging: true,
             order: [[1, "asc"]],
             searching: false,
             scrollX: true,
-            ajax: "https://localhost:44353/api/testdatapr/getprs",
+            ajax: "https://localhost:44353/api/testdatavq/getvqs",
             columnDefs: [
                 {
                     title: l('Actions'),
@@ -19,14 +19,14 @@
                                     text: l('Edit'),
                                     //visible: abp.auth.isGranted('BookStore.Books.Edit'),
                                     action: function (data) {
-                                        editModal.open({ prNumber: data.record[1] });
+                                        editModal.open({ quotationNumber: data.record[1] });
                                     }
                                 },
                                 {
                                     text: l('Delete'),
                                     //visible: abp.auth.isGranted('BookStore.Books.Delete'),
                                     confirmMessage: function (data) {
-                                        return l('PRDeletionConfirmationMessage', data.record[1]);
+                                        return l('QuotationDeletionConfirmationMessage', data.record[1]);
                                     },
                                     action: function (data) {
                                         acme.bookStore.books.book
@@ -41,14 +41,14 @@
                     }
                 },
                 {
-                    title:  l('PRNumber') ,
+                    title: l('QuotationNumber'),
                     //data: "name"
                     render: function (data) {
-                        return "<a href=\"purchaserequisition/lineitems/index?prNumber=" + data + "\">" + data + "</a>";
+                        return "<a href=\"vendorquotation/lineitems/index?quotationNumber=" + data + "\">" + data + "</a>";
                     }
                 },
                 {
-                    title: l('Date'),
+                    title: l('QuotationDate'),
                     //data: "publishDate",
                     //render: function (data) {
                     //    return luxon.DateTime.fromISO(data, {
@@ -57,29 +57,20 @@
                     //}
                 },
                 {
-                    title: l('Requisitioner'),
+                    title: l('Vendor'),
                     //data: "authorName"
                 },
                 {
-                    title: l('Department'),
+                    title: l('RelatedPR'),
                     //data: "type",
-                    //render: function (data) {
-                    //    return l('Enum:BookType:' + data);
-                    //}
+                    render: function (data) {
+                        return "<a href=\"purchaserequisition/lineitems/index?prNumber=" + data + "\">" + data + "</a>";
+                    }
+
                 },
-                       {
-                    title: l('Section'),
-                    //data: "price"
-                },
-                      
-            {
-                title: l('Status'),
-                //data: "type",
-                //render: function (data) {
-                //    return l('Enum:BookType:' + data);
-                //}
-               
-                } 
+                {
+                    title:l('Status')
+                }
                 //{
                 //    title: l('CreationTime'),
                 //    data: "creationTime",
@@ -108,7 +99,7 @@
     $('#NewPR').click(function (e) {
         e.preventDefault();
         createModal.open();
-        
+
     });
 
 

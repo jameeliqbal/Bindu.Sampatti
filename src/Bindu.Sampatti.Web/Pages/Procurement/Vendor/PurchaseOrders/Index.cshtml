@@ -1,0 +1,60 @@
+﻿@page
+
+@using  Bindu.Sampatti.Web.Pages.Procurement.Vendor.PurchaseOrders
+@model IndexModel
+
+
+@section scripts {
+    <abp-script-bundle>
+        <abp-script src="/Pages/procurement/vendor/purchaseorders/Index.js" />
+    </abp-script-bundle>
+}
+
+@{
+    ViewData["Title"] = "PO Issued - Vendors > Procurment > Bindu Sampatti";
+}
+
+
+
+<a href="/procurement/vendor"><i class="fa fa-arrow-alt-circle-left"></i> Back to List</a>
+
+<h3>
+    Vendor One
+</h3>
+<h6><span class="badge badge-pill badge-primary">29AADCB2230M1ZP</span></h6>
+<small class="text-muted">
+    SRI GANESH COMPLEX<br />
+    DARBE PUTTUR -574202<br />
+    DAKSHINA KANNADA<br />
+    KARNATAKA<br />
+</small>
+<hr />
+<h4>0987654321</h4>
+<h5>vendor1@email.com</h5>
+<h6>www.vendorone.com</h6>
+
+
+
+<abp-nav nav-style="Pill">
+    <abp-nav-item>
+        <a abp-nav-link href="/procurement/vendor/quotations">
+        <i class="fas  fa fa-clipboard-list "></i> 
+        Quotations Received
+        </a>
+    </abp-nav-item>
+    <abp-nav-item>
+        <a  active="true" abp-nav-link href="#">
+            <i class="fas  fa fa-shopping-cart "></i>
+            PO Issued
+        </a>
+    </abp-nav-item>
+
+</abp-nav>
+<abp-card class="mt-3">
+    
+
+    <abp-card-body>
+        <abp-table striped-rows="true" hoverable-rows="true" id="poList" />
+    </abp-card-body>
+</abp-card>
+

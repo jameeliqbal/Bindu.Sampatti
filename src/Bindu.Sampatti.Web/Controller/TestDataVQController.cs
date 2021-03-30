@@ -11,17 +11,18 @@ namespace Bindu.Sampatti.Web.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TestDataPRController : ControllerBase
+    public class TestDataVQController : ControllerBase
     {
-        [HttpGet("GetPRS")]
-        public string GetPRS()
+
+        [HttpGet("GetVQS")]
+        public string GetVQS()
         {
             var list = new StringBuilder();
-            list.Append("[\"\",\"PR0001\", \"2021/03/20 09:00\", \"Manager One\", \"Department One\",\"Section One\",\"Waiting for Approval\"]");
-            list.Append(",[\"\",\"PR0002\", \"2021/03-21 09:00\", \"Manager Three\", \"Department Three\",\"Section Three\",\"Approved\"]");
-            list.Append(",[\"\",\"PR0003\", \"2021/03/22 09:00\", \"Manager Two\", \"Department Two\",\"Section Two\",\"Rejected\"]");
-            list.Append(",[\"\",\"PR0004\", \"2021/03/22 09:00\", \"Manager Three\", \"Department Three\",\"Section Three\",\"Approved Partially\"]");
-             //Laptop 4GB RAM, 256 SSD, Windows 10, 15\" screen
+            list.Append("[\"\",\"VQ0001\", \"2021/03/20 09:00\", \"Vendor One\", \"PR0001\",\"Waiting for Approval\"]");
+            list.Append(",[\"\",\"VQ0002\", \"2021/03-21 09:00\", \"Vendor Three\", \"PR0002\",\"Approved\"]");
+            list.Append(",[\"\",\"VQ0003\", \"2021/03/22 09:00\", \"Vendor Two\", \"PR0003\",\"Rejected\"]");
+            list.Append(",[\"\",\"VQ0004\", \"2021/03/22 09:00\", \"Vendor Three\", \"PR0004\",\"Approved Partially\"]");
+            //Laptop 4GB RAM, 256 SSD, Windows 10, 15\" screen
             var data = "\"data\":[" + list + "]";
 
             var count = 4;
@@ -31,32 +32,15 @@ namespace Bindu.Sampatti.Web.Controller
 
         }
 
-        [HttpGet("GetPRLines")]
-        public string GetPRLines()
+
+        [HttpGet("GetVQLines")]
+        public string GetVQLines()
         {
             var list = new StringBuilder();
             list.Append("[\"\",\"Description of Item One\", \"1\", \"100\", \"100\",\"Waiting for Approval\"]");
             list.Append(",[\"\",\"Description of Item Two\", \"2\", \"200\", \"400\",\"Approved\"]");
             list.Append(",[\"\",\"Description of Item Three\", \"1\", \"300\", \"300\",\"Rejected\"]");
             list.Append(",[\"\",\"Description of Item Four\", \"1\", \"400\", \"400\",\"Approved\"]");
-             var data = "\"data\":[" + list + "]";
-
-            var count = 4;
-
-            var result = $"{{\"draw\": 1,\"recordsTotal\": {count},\"recordsFiltered\":{count}," + data + "}";
-            return result;
-
-        }
-
-
-        [HttpGet("GetQuotations")]
-        public string GetQuotations()
-        {
-            var list = new StringBuilder();
-            list.Append("[\"Q0001\", \"Vendor One\"]");
-            list.Append(",[\"Q0002\", \"Vendor Two\"]");
-            list.Append(",[\"Q0003\", \"Vendor Three\"]");
-            list.Append(",[\"Q0004\", \"Vendor Four\"]");
             var data = "\"data\":[" + list + "]";
 
             var count = 4;
@@ -66,33 +50,52 @@ namespace Bindu.Sampatti.Web.Controller
 
         }
 
-        // GET: api/<TestDataPRController>
+        [HttpGet("GetPOs")]
+        public string GetPOs()
+        {
+            var list = new StringBuilder();
+            list.Append("[\"PO0001\", \"23 March 2021 11:00 AM\",\"Vendor One\"]");
+            list.Append(",[\"PO0002\", \"23 March 2021 11:00 AM\", \"Vendor Two\"]");
+            list.Append(",[\"PO0003\", \"23 March 2021 11:00 AM\", \"Vendor Three\"]");
+            list.Append(",[\"PO0004\", \"23 March 2021 11:00 AM\", \"Vendor Four\"]");
+            var data = "\"data\":[" + list + "]";
+
+            var count = 4;
+
+            var result = $"{{\"draw\": 1,\"recordsTotal\": {count},\"recordsFiltered\":{count}," + data + "}";
+            return result;
+
+        }
+
+
+
+        // GET: api/<TestDataVQController>
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<TestDataPRController>/5
+        // GET api/<TestDataVQController>/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/<TestDataPRController>
+        // POST api/<TestDataVQController>
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/<TestDataPRController>/5
+        // PUT api/<TestDataVQController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/<TestDataPRController>/5
+        // DELETE api/<TestDataVQController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
