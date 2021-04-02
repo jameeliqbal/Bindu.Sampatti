@@ -1,0 +1,25 @@
+﻿@page
+
+@using  Bindu.Sampatti.Localization
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Bindu.Sampatti.Web.Pages.AssetManagement.AssetClass
+
+@model CreateModalModel
+
+@inject IStringLocalizer<SampattiResource> L
+
+@{
+    Layout = null;
+}
+
+<abp-dynamic-form abp-model="NewClass" asp-page="/AssetManagement/AssetClass/CreateModal">
+    <abp-modal>
+        <abp-modal-header title="@L["NewAssetClass"].Value"></abp-modal-header>
+
+        <abp-modal-body>
+            <abp-form-content />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Save|AbpModalButtons.Cancel)"></abp-modal-footer>
+    </abp-modal>
+</abp-dynamic-form>

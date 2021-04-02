@@ -14,26 +14,44 @@
         <abp-script src="/pages/procurement/vendorquotation/lineitems/index.js" />
     }
 
-    <a href="/procurement/vendorquotation"><i class="fa fa-arrow-alt-circle-left"></i> Back to List</a>
 
-    <h3>
-        VQ000X
-    </h3>
-    <h6><span class="badge badge-pill badge-primary">Waiting for Approval</span></h6>
-    <small class="text-muted">20 March 2021 11:15 AM</small>
-    <br/>
-    <a href="/Procurement/purchaserequisition/lineitems/index?prNumber=PR0001">
-        <i class="fas fa-shopping-cart"></i>
-        PR0001
-    </a>
-    <hr />
-    <h4>Manager One</h4>
-    <h5>Department One</h5>
-    <h6>Section One</h6>
+<abp-card>
+    <abp-card-header>
+        <abp-card-title>
+            Quotation Details
+        </abp-card-title>
+    </abp-card-header>
+
+    <abp-card-body>
+        <div class="row">
+            <div class="col-3">
+                <h3>
+                    VQ000X
+                </h3>
+                <h6><span class="badge badge-pill badge-primary">Waiting for Approval</span></h6>
+                <small class="text-muted">20 March 2021 11:15 AM</small>
+                <br />
+
+            </div>
+
+            <div class="=col-9">
+                <a abp-card-link href="/Procurement/purchaserequisition/lineitems/index?prNumber=PR0001">
+                    <i class="fas fa-shopping-cart"></i>
+                    PR0001
+                </a>
+            </div>
+        </div>
+    </abp-card-body>
+</abp-card>
+
+    
 
 
+    <abp-nav nav-style="Pill" icon="menu" class="mt-3">
+        <abp-nav-item>
+            <a abp-nav-link href="/procurement/vendorquotation"><i class="fa fa-arrow-alt-circle-left"></i> Back to List</a>
 
-    <abp-nav nav-style="Pill" icon="menu">
+        </abp-nav-item>
         <abp-nav-item>
             <a abp-nav-link active="true" href="#">
                 <i class="fas  fa fa-clipboard-list"></i>
@@ -41,7 +59,7 @@
             </a>
         </abp-nav-item>
         <abp-nav-item>
-            <a abp-nav-link href="https://localhost:44353/Procurement/vendorquotation/poissued/index?prNumber=PR0001"><i class="fas  fa fa-clipboard-check "></i> PO Issued</a>
+            <a abp-nav-link href="/Procurement/vendorquotation/poissued/index?prNumber=PR0001"><i class="fas  fa fa-clipboard-check "></i> PO Issued</a>
         </abp-nav-item>
 
     </abp-nav>

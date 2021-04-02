@@ -8,7 +8,7 @@
             order: [[1, "asc"]],
             searching: false,
             scrollX: true,
-            ajax: "https://localhost:44353/api/testdatavq/getvqs",
+            ajax: "/api/testdatavq/getvqs",
             columnDefs: [
                 {
                     title: l('Actions'),

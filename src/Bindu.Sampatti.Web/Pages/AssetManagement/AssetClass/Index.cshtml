@@ -1,0 +1,34 @@
+﻿@page
+
+@using Bindu.Sampatti.Web.Pages.AssetManagement.AssetClass
+
+@model IndexModel
+
+@section scripts
+{
+    <abp-script src="/pages/AssetManagement/AssetClass/index.js" />
+}
+
+@{
+    ViewData["Title"] = "Asset Class - Asset Management - Sampatti";
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>
+                    Asset Class
+                </abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-right">
+                <abp-button id="NewAssetClass" text="New Asset Class" icon="plus" button-type="Primary" />
+
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+
+    <abp-card-body>
+        <abp-table striped-rows="true" hoverable-rows="true" id="classList" />
+    </abp-card-body>
+</abp-card>

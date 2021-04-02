@@ -1,0 +1,27 @@
+﻿@page
+
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Bindu.Sampatti.Localization
+@using    Bindu.Sampatti.Web.Pages.AssetManagement.Asset.Detail
+
+@model CapitalizeModalModel
+
+@inject IStringLocalizer<SampattiResource> L
+
+@{
+    Layout = null;
+}
+
+ 
+<abp-dynamic-form abp-model="CapitalizeAsset" asp-page="/assetmanagement/asset/detail/capitalizemodal" enctype="multipart/form-data">
+    <abp-modal>
+        <abp-modal-header title="@L["CapitalizeAsset"].Value"></abp-modal-header>
+
+        <abp-modal-body>
+            <abp-form-content />
+        </abp-modal-body>
+
+        <abp-modal-footer buttons="@(AbpModalButtons.Save|AbpModalButtons.Cancel)"></abp-modal-footer>
+    </abp-modal>
+</abp-dynamic-form>

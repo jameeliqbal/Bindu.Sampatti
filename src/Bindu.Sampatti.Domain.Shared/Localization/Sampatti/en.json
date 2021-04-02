@@ -12,15 +12,14 @@
     "Menu:Procurement.PurchaseOrders": "Purchase Orders",
     "Menu:Procurement.Vendors": "Vendors",
 
-    "Menu:Assets": "Assets",
-    "Menu:Assets.Register": "Register",
-    "Menu:Assets.Audit": "Audit",
-    "Menu:Assets.Tracking": "Tracking",
-    "Menu:Assets.Classes": "Classes",
-    "Menu:Assets.Components": "Components",
-    "Menu:Assets.Tagging": "Tagging",
-    "Menu:Assets.Depriciation": "Depriciation",
-    "Menu:Assets.DisposedAndRetired": "Disposed & Retired",
+    "Menu:AssetManagement": "Asset Management",
+    "Menu:AssetManagement.Assets": "Asset List",
+    "Menu:AssetManagement.Classes": "Asset Classes",
+    "Menu:AssetManagement.AssetAudit": "Asset Audit",
+
+    "Menu:Depriciation": "Depriciation",
+    "Menu:Depriciation.DepriciationRates": "Depriciation Rates",
+    "Menu:Depriciation.DepriciationReport": "Depriciation Report",
 
     "Menu:Organization": "Organisation",
     "Menu:Organization.Employees": "Employees",
@@ -65,7 +64,14 @@
     "POLineItemDeletionConfirmationMessage": "Do you wish to DELETE this item:  {0}?",
 
     "VendorDeletionConfirmationMessage": "Do you wish to DELETE  Vendor {0}?",
-    "VendorName": "Vendor Name"
+    "VendorName": "Vendor Name",
+
+    "AssetClassDeletionConfirmationMessage": "Do you wish to DELETE this Asset Class:  {0}?",
+    "AssetClassCode": "Code",
+    "AssetClassName": "Name",
+
+    "NewDepriciationRate": "New Depriciation Rate",
+    "DepriciationRate": "Depriciation Rate"
 
   }
 }

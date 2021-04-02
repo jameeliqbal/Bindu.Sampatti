@@ -12,15 +12,14 @@
         public const string PurchaseOrders = Procurement + ".PurchaseOrders";
         public const string Vendors = Procurement + ".Vendors";
 
-        public const string Assets = Prefix + ".Assets";
-        public const string Register = Assets + ".Register";
-        public const string Audit = Assets + ".Audit";
-        public const string Tracking = Assets + ".Tracking";
-        public const string Classes = Assets + ".Classes";
-        public const string Components = Assets + ".Components";
-        public const string Tagging = Assets + ".Tagging";
-        public const string Depriciation = Assets + ".Depriciation";
-        public const string DisposedAndRetired = Assets + ".DisposedAndRetired";
+        public const string AssetManagement = Prefix + ".AssetManagement";
+        public const string Assets = AssetManagement + ".Assets";
+        public const string Classes = AssetManagement + ".Classes";
+        public const string AssetAudit = AssetManagement + ".AssetAudit";
+
+        public const string Depriciation = Prefix + ".Depriciation";
+        public const string DepriciationRates = Depriciation + ".DepriciationRates";
+        public const string DepriciationReport = Depriciation + ".DepriciationReport";
 
         public const string Organization = Prefix + ".Organization";
         public const string Employees = Organization + ".Employees";

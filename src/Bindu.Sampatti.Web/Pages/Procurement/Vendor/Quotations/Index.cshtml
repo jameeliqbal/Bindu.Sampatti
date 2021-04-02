@@ -16,31 +16,48 @@
 }
 
 
+<abp-card>
+    <abp-card-header>
+        <abp-card-title>
+            Vendor Details
+        </abp-card-title>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-row>
+            <abp-column size-md="_3">
+                <h3>
+                    Vendor One
+                </h3>
+                <h6><span class="badge badge-pill badge-primary">29AADCB2230M1ZP</span></h6>
+                <small class="text-muted">
+                    SRI GANESH COMPLEX<br />
+                    DARBE PUTTUR -574202<br />
+                    DAKSHINA KANNADA<br />
+                    KARNATAKA<br />
+                </small>
+            </abp-column>
+            <abp-column size-md="_9">
+                <h4>0987654321</h4>
+                <h5>vendor1@email.com</h5>
+                <h6>www.vendorone.com</h6>
+            </abp-column>
+        </abp-row>
+    </abp-card-body>
+</abp-card>
+ 
 
-<a href="/procurement/vendor"><i class="fa fa-arrow-alt-circle-left"></i> Back to List</a>
-
-<h3>
-    Vendor One
-</h3>
-<h6><span class="badge badge-pill badge-primary">29AADCB2230M1ZP</span></h6>
-<small class="text-muted">
-    SRI GANESH COMPLEX<br />
-    DARBE PUTTUR -574202<br />
-    DAKSHINA KANNADA<br />
-    KARNATAKA<br />
-</small>
-<hr />
-<h4>0987654321</h4>
-<h5>vendor1@email.com</h5>
-<h6>www.vendorone.com</h6>
 
 
-<abp-nav nav-style="Pill">
+<abp-nav nav-style="Pill" class="mt-3">
+    <abp-nav-item>
+        <a abp-nav-link href="/procurement/vendor"><i class="fa fa-arrow-alt-circle-left"></i> Back to List</a>
+
+    </abp-nav-item>
     <abp-nav-item>
         <a abp-nav-link href="#" active="true"><i class="fas  fa fa-clipboard-list "></i> Quotations Received</a>
     </abp-nav-item>
     <abp-nav-item>
-        <a abp-nav-link href="https://localhost:44353/Procurement/vendor/purchaseorders/index?prNumber=PR0001">
+        <a abp-nav-link href="/Procurement/vendor/purchaseorders/index?prNumber=PR0001">
             <i class="fas  fa fa-shopping-cart "></i>
             PO Issued
         </a>

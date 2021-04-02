@@ -13,12 +13,15 @@
     );
 
 
-    var farList = $('#farList').DataTable(nc);
+    var farList = $('#assetList').DataTable(nc);
 
     function CreateColumns() {
         return [
             {
                 title: "Asset Code",
+                render: function (data) {
+                    return "<a href=\"/AssetManagement/Asset/Detail\">" + data + "</>";
+                }
                 //data: "assetCode"
             },
             {
@@ -33,5 +36,13 @@
         ];
     }
 
+
+    var createModal = new abp.ModalManager(abp.appPath + "AssetManagement/Asset/CreateModal");
+
+    $("#NewFixedAsset").click(function (e) {
+        e.preventDefault();
+        createModal.open();
+
+    });
 });
 

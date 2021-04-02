@@ -8,7 +8,7 @@
             order: [[1, "asc"]],
             searching: false,
             scrollX: true,
-            ajax: "https://localhost:44353/api/testdatavq/getpos",
+            ajax: "/api/testdatavq/getpos",
             columnDefs: [
                 //{
                 //    title: l('Actions'),

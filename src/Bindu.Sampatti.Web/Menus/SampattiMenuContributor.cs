@@ -37,19 +37,19 @@ namespace Bindu.Sampatti.Web.Menus
             menuProcurement.AddItem(new ApplicationMenuItem(SampattiMenus.PurchaseOrders, l["Menu:Procurement.PurchaseOrders"], "/Procurement/PurchaseOrder"));
             menuProcurement.AddItem(new ApplicationMenuItem(SampattiMenus.Vendors, l["Menu:Procurement.Vendors"], "/Procurement/Vendor"));
 
-            var menuAssets = new ApplicationMenuItem(SampattiMenus.Assets, l["Menu:Assets"], "#");
-            context.Menu.Items.Insert(2, menuAssets);
-            menuAssets.AddItem(new ApplicationMenuItem(SampattiMenus.Register, l["Menu:Assets.Register"], "/Assets/Register"));
-            menuAssets.AddItem(new ApplicationMenuItem(SampattiMenus.Audit, l["Menu:Assets.Audit"], "#"));
-            menuAssets.AddItem(new ApplicationMenuItem(SampattiMenus.Tracking, l["Menu:Assets.Tracking"], "#"));
-            menuAssets.AddItem(new ApplicationMenuItem(SampattiMenus.Classes, l["Menu:Assets.Classes"], "#"));
-            menuAssets.AddItem(new ApplicationMenuItem(SampattiMenus.Components, l["Menu:Assets.Components"], "#"));
-            menuAssets.AddItem(new ApplicationMenuItem(SampattiMenus.Tagging, l["Menu:Assets.Tagging"], "#"));
-            menuAssets.AddItem(new ApplicationMenuItem(SampattiMenus.Depriciation, l["Menu:Assets.Depriciation"], "#"));
-            menuAssets.AddItem(new ApplicationMenuItem(SampattiMenus.DisposedAndRetired, l["Menu:Assets.DisposedAndRetired"], "#"));
+            var menuAssetManagement = new ApplicationMenuItem(SampattiMenus.AssetManagement, l["Menu:AssetManagement"], "#");
+            context.Menu.Items.Insert(2, menuAssetManagement);
+            menuAssetManagement.AddItem(new ApplicationMenuItem(SampattiMenus.Assets, l["Menu:AssetManagement.Assets"], "/AssetManagement/Asset"));
+            menuAssetManagement.AddItem(new ApplicationMenuItem(SampattiMenus.Classes, l["Menu:AssetManagement.Classes"], "/AssetManagement/AssetClass"));
+            menuAssetManagement.AddItem(new ApplicationMenuItem(SampattiMenus.AssetAudit, l["Menu:AssetManagement.AssetAudit"], "#"));
+
+            var menuDepriciation = new ApplicationMenuItem(SampattiMenus.Depriciation, l["Menu:Depriciation"], "#");
+            context.Menu.Items.Insert(3, menuDepriciation);
+            menuDepriciation.AddItem(new ApplicationMenuItem(SampattiMenus.DepriciationRates, l["Menu:Depriciation.DepriciationRates"], "/Depriciation/Rate"));
+            menuDepriciation.AddItem(new ApplicationMenuItem(SampattiMenus.DepriciationReport, l["Menu:Depriciation.DepriciationReport"], "#"));
 
             var menuOrg = new ApplicationMenuItem(SampattiMenus.Organization, l["Menu:Organization"], "#");
-            context.Menu.Items.Insert(3, menuOrg);
+            context.Menu.Items.Insert(4, menuOrg);
             menuOrg.AddItem(new ApplicationMenuItem(SampattiMenus.Employees, l["Menu:Organization.Employees"], "#"));
             menuOrg.AddItem(new ApplicationMenuItem(SampattiMenus.Departments, l["Menu:Organization.Departments"], "#"));
             menuOrg.AddItem(new ApplicationMenuItem(SampattiMenus.Sections, l["Menu:Organization.Sections"], "#"));
