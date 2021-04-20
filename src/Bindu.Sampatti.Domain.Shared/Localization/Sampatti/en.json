@@ -71,7 +71,9 @@
     "AssetClassName": "Name",
 
     "NewDepriciationRate": "New Depriciation Rate",
-    "DepriciationRate": "Depriciation Rate"
+    "DepriciationRate": "Depriciation Rate",
+
+    "Sampatti:00001": "There is already a Location with the same name: {name}"
 
   }
 }
