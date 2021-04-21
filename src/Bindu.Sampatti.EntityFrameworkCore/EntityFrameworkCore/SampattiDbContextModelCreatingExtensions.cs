@@ -12,7 +12,7 @@ namespace Bindu.Sampatti.EntityFrameworkCore
             Check.NotNull(builder, nameof(builder));
 
             builder.Entity<Location>(b => {
-                b.ToTable(SampattiConsts.DbTablePrefix + "Locaitons",
+                b.ToTable(SampattiConsts.DbTablePrefix + "Locations",
                     SampattiConsts.DbSchema);
 
                 b.ConfigureByConvention();
