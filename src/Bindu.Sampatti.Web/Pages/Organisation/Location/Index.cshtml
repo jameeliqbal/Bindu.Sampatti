@@ -1,0 +1,32 @@
+﻿@page
+
+@using Bindu.Sampatti.Localization
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Card
+
+@using  Bindu.Sampatti.Web.Pages.Organisation.Location
+
+@model IndexModel
+
+@inject IStringLocalizer<SampattiResource> L
+
+@section scripts {
+    <abp-script src="/Pages/Organisation/Location/index.js"/>
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Locations"]</abp-card-title>
+            </abp-column>
+
+            <abp-column size-md="_6" class="text-right" >
+                <abp-button id="NewLocationButton" text="@L["NewLocation"].Value" icon="plus" button-type="Primary"/> 
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" hoverable-rows="true" id="LocationsTable"></abp-table>
+    </abp-card-body>
+</abp-card>
