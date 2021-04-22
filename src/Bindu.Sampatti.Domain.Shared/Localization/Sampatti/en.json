@@ -73,6 +73,10 @@
     "NewDepriciationRate": "New Depriciation Rate",
     "DepriciationRate": "Depriciation Rate",
 
+    "LocationName": "Name",
+    "LocationStatus": "Status",
+    "LocationNew": "New Location",
+
     "Sampatti:00001": "There is already a Location with the same name: {name}"
 
   }
