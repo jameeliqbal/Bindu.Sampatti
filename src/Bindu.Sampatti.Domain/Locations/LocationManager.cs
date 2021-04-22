@@ -18,7 +18,7 @@ namespace Bindu.Sampatti.Locations
             _locationRepository = locationRepository;
         }
 
-        public async Task<Location> CreateAsync(bool isEnabled,[NotNull]string name, [CanBeNull]string notes =null )
+        public async Task<Location> CreateAsync([NotNull]string name,bool isEnabled, [CanBeNull]string notes =null )
         {
             Check.NotNullOrWhiteSpace(name, nameof(name));
 
