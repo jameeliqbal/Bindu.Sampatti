@@ -18,6 +18,7 @@ namespace Bindu.Sampatti.Locations
 
         internal Location(Guid id, [NotNull]string name, [CanBeNull]string notes, bool isEnabled):base(id)
         {
+            SetName(name);
             Notes = notes;
             IsEnabled = isEnabled;
         }
@@ -33,7 +34,8 @@ namespace Bindu.Sampatti.Locations
             Name = Check.NotNullOrWhiteSpace(
                 newName, 
                 nameof(newName), 
-                maxLength: LocationConsts.MaxNameLength);
+                maxLength: LocationConsts.MaxNameLength
+            );
         }
     }
 

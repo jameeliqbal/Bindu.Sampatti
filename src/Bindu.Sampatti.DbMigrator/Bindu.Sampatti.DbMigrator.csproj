@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="appsettings.live.json" />
+    <None Remove="appsettings.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="appsettings.live.json">
+    <Content Include="appsettings.json">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
