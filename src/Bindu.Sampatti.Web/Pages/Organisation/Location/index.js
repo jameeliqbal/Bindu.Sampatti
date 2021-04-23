@@ -1,4 +1,4 @@
-﻿$(function(){
+﻿$(function () {
     var l = abp.localization.getResource("Sampatti");
 
     var locationsDataTable = $("#LocationsTable").DataTable(
@@ -36,9 +36,9 @@
                     data: "isEnabled",
                     render: function (data) {
                         if (data == true)
-                            return "Active"
+                            return l('LocationStatusActive')
                         else
-                            return "In-Active"
+                            return l('LocationStatusInActive')
                     }
                 }
 
@@ -47,5 +47,27 @@
 
         })
     ); //datatable
+
+    //ADD NEW LOCATION
+    var createModal = new abp.ModalManager(abp.appPath + "organisation/location/createModal");
+
+    createModal.onResult(function (e,d) {
+         
+        abp.notify.success(d.responseText.toUpperCase() + " added successfully!","New Location");
+    });
+
+    createModal.onClose(function () {
+       
+        
+          locationsDataTable.ajax.reload() ;
+
+    });
+     
+    $("#NewLocationButton").click(function (e) {
+        e.preventDefault();
+
+        createModal.open();
+    });
+
 
 });
