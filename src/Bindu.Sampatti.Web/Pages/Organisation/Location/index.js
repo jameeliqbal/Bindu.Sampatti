@@ -1,7 +1,7 @@
 ﻿$(function () {
     var l = abp.localization.getResource("Sampatti");
-     var responseCallback = function (result) {
 
+    var responseCallback = function (result) {
         // your custom code.
         abp.ui.clearBusy();
 
@@ -66,12 +66,12 @@
 
     createModal.onResult(function (e,d) {
          
+        abp.ui.setBusy("#LocationsTable");
         abp.notify.success(d.responseText.toUpperCase() + " added successfully!","New Location");
     });
 
     createModal.onClose(function () {
        
-        abp.ui.setBusy("#LocationsTable");
           locationsDataTable.ajax.reload() ;
 
     });
