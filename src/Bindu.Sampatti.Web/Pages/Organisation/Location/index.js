@@ -1,6 +1,19 @@
 ﻿$(function () {
     var l = abp.localization.getResource("Sampatti");
+     var responseCallback = function (result) {
 
+        // your custom code.
+        abp.ui.clearBusy();
+
+        return {
+            recordsTotal: result.totalCount,
+            recordsFiltered: result.totalCount,
+            data: result.items
+        };
+    }
+
+     abp.ui.setBusy("#LocationsTable");
+ 
     var locationsDataTable = $("#LocationsTable").DataTable(
         abp.libs.datatables.normalizeConfiguration({
             serverSide: true,
@@ -8,7 +21,7 @@
             order: [[1, "asc"]],
             searching: false,
             scrollX: true,
-            ajax: abp.libs.datatables.createAjax(bindu.sampatti.locations.location.getList),
+            ajax: abp.libs.datatables.createAjax(bindu.sampatti.locations.location.getList, null, responseCallback),
             columnDefs: [
                 {
                     title: l('Actions'),
@@ -48,7 +61,7 @@
         })
     ); //datatable
 
-    //ADD NEW LOCATION
+     //ADD NEW LOCATION
     var createModal = new abp.ModalManager(abp.appPath + "organisation/location/createModal");
 
     createModal.onResult(function (e,d) {
@@ -58,14 +71,14 @@
 
     createModal.onClose(function () {
        
-        
+        abp.ui.setBusy("#LocationsTable");
           locationsDataTable.ajax.reload() ;
 
     });
      
     $("#NewLocationButton").click(function (e) {
         e.preventDefault();
-
+        
         createModal.open();
     });
 
