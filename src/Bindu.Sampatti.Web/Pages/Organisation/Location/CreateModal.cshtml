@@ -22,8 +22,6 @@
         <abp-modal-body>
             <abp-input asp-for="NewLocation.Name" />
             <abp-input asp-for="NewLocation.Notes" />
-            @*<abp-input asp-for="NewLocation.Status"  />*@
-            @*<label>Status </label>*@
             <abp-radio asp-for="NewLocation.Status" asp-items="@Model.LocationStatus" label="@L["LocationStatus"].Value"  inline="true" />
 
         </abp-modal-body>

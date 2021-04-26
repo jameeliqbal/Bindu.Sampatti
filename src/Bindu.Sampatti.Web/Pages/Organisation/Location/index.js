@@ -1,6 +1,8 @@
 ﻿$(function () {
     var l = abp.localization.getResource("Sampatti");
 
+    abp.ui.setBusy("#LocationsTable");
+
     var responseCallback = function (result) {
         // your custom code.
         abp.ui.clearBusy();
@@ -12,8 +14,8 @@
         };
     }
 
-     abp.ui.setBusy("#LocationsTable");
- 
+    var editModal = new abp.ModalManager(abp.appPath + "organisation/location/editmodal");
+
     var locationsDataTable = $("#LocationsTable").DataTable(
         abp.libs.datatables.normalizeConfiguration({
             serverSide: true,
@@ -30,9 +32,9 @@
                             [
                                 {
                                     text: l('Edit'),
-                                    //action: function (data) {
-
-                                    //}
+                                    action: function (data) {
+                                        editModal.open({ id: data.record.id });
+                                    }
                                 },
                                 {
                                     text: l('Delete')
@@ -64,6 +66,12 @@
      //ADD NEW LOCATION
     var createModal = new abp.ModalManager(abp.appPath + "organisation/location/createModal");
 
+    $("#NewLocationButton").click(function (e) {
+        e.preventDefault();
+        
+        createModal.open();
+    });
+
     createModal.onResult(function (e,d) {
          
         abp.ui.setBusy("#LocationsTable");
@@ -76,11 +84,11 @@
 
     });
      
-    $("#NewLocationButton").click(function (e) {
-        e.preventDefault();
-        
-        createModal.open();
-    });
 
+    //EDIT LOCATION
+    editModal.onResult(function () {
+        abp.ui.setBusy("#LocationsTable");
+        abp.notify.success(d.responseText.toUpperCase() + " saved successfully!", "Update Location");
+    });
 
 });

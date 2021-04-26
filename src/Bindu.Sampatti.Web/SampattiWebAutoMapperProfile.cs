@@ -12,6 +12,10 @@ namespace Bindu.Sampatti.Web
             CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Location.CreateModalModel.CreateLocationViewModal, CreateLocationDto>()
                 .ForMember(dest => dest.IsEnabled,
                             opt => opt.MapFrom(src => src.Status));
+
+            CreateMap<LocationDto, Bindu.Sampatti.Web.Pages.Organisation.Location.EditModalModel.EditLocationViewModal>()
+                .ForMember(dest => dest.Status,
+                            opt=>opt.MapFrom(src=>src.IsEnabled));
         }
     }
 }
