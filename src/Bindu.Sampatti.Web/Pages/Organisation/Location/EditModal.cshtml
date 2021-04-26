@@ -17,6 +17,7 @@
     <abp-modal>
         <abp-modal-header title="@L["LocationUpdate"].Value"></abp-modal-header>
         <abp-modal-body>
+            <abp-input asp-for="CurrentLocation.Id" type="hidden"/>
             <abp-input asp-for="CurrentLocation.Name"/>
             <abp-input asp-for="CurrentLocation.Notes"/>
             <abp-radio asp-for="CurrentLocation.Status" asp-items="@Model.LocationStatus" label="@L["LocationStatus"].Value" inline="true"/>

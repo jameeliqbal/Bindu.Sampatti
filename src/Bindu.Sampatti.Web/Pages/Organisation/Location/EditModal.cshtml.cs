@@ -46,7 +46,13 @@ namespace Bindu.Sampatti.Web.Pages.Organisation.Location
             LocationStatus.AddRange(new List<SelectListItem> { active, inActive });
         }
 
-        
+        public async Task<IActionResult> OnPostAsync()
+        {
+            var currentLocationDto =   ObjectMapper.Map<EditLocationViewModal, UpdateLocationDto>(CurrentLocation);
+            await _locationAppService.UpdateAsnyc(CurrentLocation.Id, currentLocationDto);
+
+            return Content(CurrentLocation.Name);
+        }
 
         public class EditLocationViewModal
         {

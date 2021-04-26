@@ -15,7 +15,7 @@
     }
 
     var editModal = new abp.ModalManager(abp.appPath + "organisation/location/editmodal");
-
+    
     var locationsDataTable = $("#LocationsTable").DataTable(
         abp.libs.datatables.normalizeConfiguration({
             serverSide: true,
@@ -37,7 +37,19 @@
                                     }
                                 },
                                 {
-                                    text: l('Delete')
+                                    text: l('Delete'),
+                                    confirmMessage: function (data) {
+                                        return l('LocationDeleteConfirmationText',data.record.name.toUpperCase());
+                                    },
+                                    action: function (data) {
+                                        bindu.sampatti.locations.location
+                                            .delete(data.record.id)
+                                            .then(function () {
+                                                abp.notify.success(data.record.name.toUpperCase() +" " + l("SuccessfullyDeleted"),"Delete Location");
+                                                abp.ui.setBusy("#LocationsTable");
+                                                locationsDataTable.ajax.reload();
+                                            });
+                                    }
                                 }
                             ]
                     }
@@ -86,9 +98,17 @@
      
 
     //EDIT LOCATION
-    editModal.onResult(function () {
+    editModal.onResult(function (e,d) {
         abp.ui.setBusy("#LocationsTable");
         abp.notify.success(d.responseText.toUpperCase() + " saved successfully!", "Update Location");
     });
+
+    editModal.onClose(function () {
+
+        locationsDataTable.ajax.reload();
+
+    });
+
+    //DELETE LOCATION
 
 });
