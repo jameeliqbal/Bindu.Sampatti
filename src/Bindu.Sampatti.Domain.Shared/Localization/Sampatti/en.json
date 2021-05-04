@@ -71,7 +71,16 @@
     "AssetClassName": "Name",
 
     "NewDepriciationRate": "New Depriciation Rate",
-    "DepriciationRate": "Depriciation Rate"
+    "DepriciationRate": "Depriciation Rate",
+
+    "LocationName": "Name",
+    "LocationStatus": "Status",
+    "LocationStatusActive": "Active",
+    "LocationStatusInActive": "In-Active",
+    "LocationNew": "New Location",
+    "LocationDeleteConfirmationText": "Do you wish to DELETE this Location: {0}",
+
+    "Sampatti:00001": "There is already a Location with the same name: {name}"
 
   }
 }

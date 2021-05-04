@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Bindu.Sampatti.Locations;
+ 
 
 namespace Bindu.Sampatti.Web
 {
@@ -7,6 +9,17 @@ namespace Bindu.Sampatti.Web
         public SampattiWebAutoMapperProfile()
         {
             //Define your AutoMapper configuration here for the Web project.
+            CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Location.CreateModalModel.CreateLocationViewModal, CreateLocationDto>()
+                .ForMember(dest => dest.IsEnabled,
+                            opt => opt.MapFrom(src => src.Status));
+
+            CreateMap<LocationDto, Bindu.Sampatti.Web.Pages.Organisation.Location.EditModalModel.EditLocationViewModal>()
+                .ForMember(dest => dest.Status,
+                            opt=>opt.MapFrom(src=>src.IsEnabled));
+
+            CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Location.EditModalModel.EditLocationViewModal, UpdateLocationDto>()
+                .ForMember(dest => dest.IsEnabled,
+                            opt => opt.MapFrom(src => src.Status)); 
         }
     }
 }

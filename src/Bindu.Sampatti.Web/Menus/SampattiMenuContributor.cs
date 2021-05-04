@@ -53,7 +53,7 @@ namespace Bindu.Sampatti.Web.Menus
             menuOrg.AddItem(new ApplicationMenuItem(SampattiMenus.Employees, l["Menu:Organization.Employees"], "#"));
             menuOrg.AddItem(new ApplicationMenuItem(SampattiMenus.Departments, l["Menu:Organization.Departments"], "#"));
             menuOrg.AddItem(new ApplicationMenuItem(SampattiMenus.Sections, l["Menu:Organization.Sections"], "#"));
-            menuOrg.AddItem(new ApplicationMenuItem(SampattiMenus.Locations, l["Menu:Organization.Locations"], "#"));
+            menuOrg.AddItem(new ApplicationMenuItem(SampattiMenus.Locations, l["Menu:Organization.Locations"], "/organisation/location"));
 
         }
     }

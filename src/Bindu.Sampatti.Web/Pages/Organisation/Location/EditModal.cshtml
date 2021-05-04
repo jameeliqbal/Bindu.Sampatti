@@ -1,0 +1,28 @@
+﻿@page
+
+@using Microsoft.Extensions.Localization 
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Bindu.Sampatti.Localization
+@using Bindu.Sampatti.Web.Pages.Organisation.Location
+
+@model EditModalModel
+
+@inject IStringLocalizer<SampattiResource> L
+
+@{
+    Layout = null;
+}
+
+<form asp-page="/organisation/location/editmodal">
+    <abp-modal>
+        <abp-modal-header title="@L["LocationUpdate"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="CurrentLocation.Id" type="hidden"/>
+            <abp-input asp-for="CurrentLocation.Name"/>
+            <abp-input asp-for="CurrentLocation.Notes"/>
+            <abp-radio asp-for="CurrentLocation.Status" asp-items="@Model.LocationStatus" label="@L["LocationStatus"].Value" inline="true"/>
+
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Save|AbpModalButtons.Cancel)"></abp-modal-footer>
+    </abp-modal>
+</form>
