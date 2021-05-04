@@ -1,4 +1,5 @@
-﻿using Bindu.Sampatti.Locations;
+﻿using Bindu.Sampatti.Depots;
+using Bindu.Sampatti.Locations;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore.Modeling;
@@ -24,6 +25,7 @@ namespace Bindu.Sampatti.EntityFrameworkCore
                 b.HasIndex(x => x.Name);
             
             });
+
             /* Configure your own tables/entities inside here */
 
             //builder.Entity<YourEntity>(b =>
@@ -32,6 +34,17 @@ namespace Bindu.Sampatti.EntityFrameworkCore
             //    b.ConfigureByConvention(); //auto configure for the base class props
             //    //...
             //});
+
+            builder.Entity<Depot>(b =>
+            {
+                b.ToTable(SampattiConsts.DbTablePrefix + "Depots", SampattiConsts.DbSchema);
+                b.ConfigureByConvention();
+                b.Property(x => x.Name)
+                    .IsRequired()
+                    .HasMaxLength(DepotConsts.MaxNameLength);
+                b.HasIndex(x => x.Name);
+                b.HasOne<Location>().WithMany().HasForeignKey(x => x.Location).IsRequired();
+            });
         }
     }
 }
