@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Bindu.Sampatti.Depots;
 using Bindu.Sampatti.Locations;
  
 
@@ -19,7 +20,9 @@ namespace Bindu.Sampatti.Web
 
             CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Location.EditModalModel.EditLocationViewModal, UpdateLocationDto>()
                 .ForMember(dest => dest.IsEnabled,
-                            opt => opt.MapFrom(src => src.Status)); 
+                            opt => opt.MapFrom(src => src.Status));
+
+            CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Depot.CreateModalModel.CreateDepotViewModal, CreateDepotDto>();
         }
     }
 }

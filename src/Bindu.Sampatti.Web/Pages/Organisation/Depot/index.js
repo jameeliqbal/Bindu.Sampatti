@@ -78,4 +78,26 @@
     ); //datatable
 
 
+    //ADD NEW DEPOT
+    var createModal = new abp.ModalManager(abp.appPath + "organisation/depot/createModal");
+
+    $("#NewDepotButton").click(function (e) {
+        e.preventDefault();
+
+        createModal.open();
+    });
+
+    createModal.onResult(function (e, d) {
+
+        abp.ui.setBusy("#DepotTable");
+        abp.notify.success(d.responseText.toUpperCase() + " added successfully!", "New Depot");
+    });
+
+    createModal.onClose(function () {
+
+        depotDataTable.ajax.reload();
+
+    });
+
+
 });//closure

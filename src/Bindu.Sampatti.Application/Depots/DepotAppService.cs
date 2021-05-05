@@ -96,6 +96,7 @@ namespace Bindu.Sampatti.Depots
             var depotDtos = queryResult.Select(x =>
             {
                 var depotDto = ObjectMapper.Map<Depot, DepotDto>(x.depot);
+                depotDto.LocationId = x.location.Id;
                 depotDto.LocationName = x.location.Name;
                 return depotDto;
             }).ToList();
