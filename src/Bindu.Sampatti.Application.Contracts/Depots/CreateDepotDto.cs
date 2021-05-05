@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Bindu.Sampatti.Depots
 {
-    class CreateDepotDto
+    public class CreateDepotDto
     {
         [Required]
         [StringLength(DepotConsts.MaxNameLength)]

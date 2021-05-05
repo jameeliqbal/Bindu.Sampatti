@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Bindu.Sampatti.Depots;
 using Bindu.Sampatti.Locations;
 
 namespace Bindu.Sampatti
@@ -11,6 +12,8 @@ namespace Bindu.Sampatti
              * Alternatively, you can split your mapping configurations
              * into multiple profile classes for a better organization. */
             CreateMap<Location, LocationDto>();
+            CreateMap<Depot, DepotDto>();
+
         }
     }
 }
