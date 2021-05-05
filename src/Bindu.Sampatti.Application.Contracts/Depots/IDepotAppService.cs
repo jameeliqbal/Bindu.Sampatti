@@ -14,6 +14,6 @@ namespace Bindu.Sampatti.Depots
         Task<DepotDto> CreateAsync(CreateDepotDto input);
         Task UpdateDepot(Guid id, UpdateDepotDto input);
         Task DeleteDepot(Guid id);
-
+        Task<ListResultDto<LocationLookupDto>> GetLocationLookupAsync();
     }
 }

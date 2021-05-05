@@ -8,7 +8,8 @@ namespace Bindu.Sampatti.Depots
     public class DepotDto : AuditedEntityDto<Guid>
     {
         public string Name { get; set; }
-        public Guid Location { get; set; }
+        public Guid LocationId { get; set; }
+        public string LocationName { get; set; }
         public string Notes { get; set; }
         public bool Status { get; set; }
     }

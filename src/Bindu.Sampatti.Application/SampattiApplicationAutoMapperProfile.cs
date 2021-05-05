@@ -13,7 +13,7 @@ namespace Bindu.Sampatti
              * into multiple profile classes for a better organization. */
             CreateMap<Location, LocationDto>();
             CreateMap<Depot, DepotDto>();
-
+            CreateMap<Location, LocationLookupDto>();
         }
     }
 }
