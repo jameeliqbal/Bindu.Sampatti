@@ -64,7 +64,7 @@
                 },
                 {
                     title: l('DepotStatus'),
-                    data: "Status",
+                    data: "status",
                     render: function (data) {
                         if (data == true)
                             return l('DepotStatusActive')

@@ -70,7 +70,13 @@ namespace Bindu.Sampatti.Web.Pages.Organisation.Depot
             return depotStatus;
         }
 
+        public async Task<IActionResult> OnPostAsync()
+        {
+            var existingDepotDto = ObjectMapper.Map<EditDepotViewModal, UpdateDepotDto>(ExistingDepot);
+            await _depotAppService.UpdateDepot(ExistingDepot.Id, existingDepotDto);
 
+            return Content(ExistingDepot.Name);
+        }
 
         public class EditDepotViewModal
         {
