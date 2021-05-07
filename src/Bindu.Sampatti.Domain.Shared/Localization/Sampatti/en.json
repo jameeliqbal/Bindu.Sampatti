@@ -31,7 +31,7 @@
     "Edit": "Edit",
     "Delete": "Delete",
     "PRDeletionConfirmationMessage": "Do you wish to DELETE Purchase Requisition # {0}?",
-    "SuccessfullyDeleted": "Successfully Deleted!",
+    "SuccessfullyDeleted": "has been Deleted!",
 
     "PRNumber": "PR Number",
     "Date": "Date",
@@ -79,6 +79,16 @@
     "LocationStatusInActive": "In-Active",
     "LocationNew": "New Location",
     "LocationDeleteConfirmationText": "Do you wish to DELETE this Location: {0}",
+
+    "Depots": "Depots",
+    "AddNewDepot": "Add New Depot",
+    "DepotUpdate": "Edit Depot",
+    "DepotName": "Depot Name",
+    "DepotLocation": "Location of Depot",
+    "DepotStatus": "Status",
+    "DepotStatusActive": "Active",
+    "DepotStatusInActive": "In-Active",
+    "DepotDeleteConfirmationText": "Do you wish to DELETE this Depot: {0}",
 
     "Sampatti:00001": "There is already a Location with the same name: {name}"
 
