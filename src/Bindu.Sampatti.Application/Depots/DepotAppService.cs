@@ -160,6 +160,10 @@ namespace Bindu.Sampatti.Depots
                 return sorting.Replace("depotName", "depot.Name", StringComparison.OrdinalIgnoreCase);
             }
 
+            if (sorting.Contains("locationName", StringComparison.OrdinalIgnoreCase))
+            {
+                return sorting.Replace("locationName", "depot.Location", StringComparison.OrdinalIgnoreCase);
+            }
             return $"depot.{sorting}";
         }
     }
