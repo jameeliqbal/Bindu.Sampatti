@@ -14,6 +14,8 @@
         };
     }
 
+    var editModal = new abp.ModalManager(abp.appPath + "organisation/depot/editmodal");
+
     var depotDataTable = $("#DepotTable").DataTable(
         abp.libs.datatables.normalizeConfiguration({
             serverSide: true,
@@ -99,5 +101,17 @@
 
     });
 
+
+    //EDIT DEPOT
+    editModal.onResult(function (e, d) {
+        abp.ui.setBusy("#DepotTable");
+        abp.notify.success(d.responseText.toUpperCase() + " saved successfully!", "Update Depot");
+    });
+
+    editModal.onClose(function () {
+
+        depotDataTable.ajax.reload();
+
+    });
 
 });//closure

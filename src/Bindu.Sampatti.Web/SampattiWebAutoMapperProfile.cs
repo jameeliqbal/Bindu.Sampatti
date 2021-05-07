@@ -23,6 +23,9 @@ namespace Bindu.Sampatti.Web
                             opt => opt.MapFrom(src => src.Status));
 
             CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Depot.CreateModalModel.CreateDepotViewModal, CreateDepotDto>();
+            CreateMap<DepotDto, Bindu.Sampatti.Web.Pages.Organisation.Depot.EditModalModel.EditDepotViewModal>();
+                //.ForMember(dest=>dest.Location,
+                //            opt=>opt.MapFrom(src=>src.LocationName));
         }
     }
 }
