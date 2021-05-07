@@ -1,0 +1,29 @@
+﻿@page
+
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Bindu.Sampatti.Localization
+@using Bindu.Sampatti.Web.Pages.Organisation.Depot
+
+@model EditModalModel
+
+@inject IStringLocalizer<SampattiResource> L
+
+@{
+    Layout = null;
+}
+
+<form asp-page="/organisation/depot/editmodal">
+    <abp-modal>
+        <abp-modal-header title="@L["DepotUpdate"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="ExistingDepot.Id" type="hidden" />
+            <abp-select asp-for="ExistingDepot.Location" asp-items="@Model.Locations" label="@L["DepotLocation"].Value"/>
+            <abp-input asp-for="ExistingDepot.Name" />
+            <abp-input asp-for="ExistingDepot.Notes" />
+            <abp-radio asp-for="ExistingDepot.Status" asp-items="@Model.DepotStatus" label="@L["DepotStatus"].Value" inline="true" />
+
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Save|AbpModalButtons.Cancel)"></abp-modal-footer>
+    </abp-modal>
+</form>

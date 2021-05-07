@@ -6,6 +6,7 @@ using Volo.Abp.EntityFrameworkCore.Modeling;
 using Volo.Abp.Identity;
 using Volo.Abp.Users.EntityFrameworkCore;
 using Bindu.Sampatti.Locations;
+using Bindu.Sampatti.Depots;
 
 namespace Bindu.Sampatti.EntityFrameworkCore
 {
@@ -24,6 +25,7 @@ namespace Bindu.Sampatti.EntityFrameworkCore
         public DbSet<AppUser> Users { get; set; }
         public DbSet<Location> Locations { get; set; }
 
+        public DbSet<Depot> Depots { get; set; }
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside SampattiDbContextModelCreatingExtensions.ConfigureSampatti
