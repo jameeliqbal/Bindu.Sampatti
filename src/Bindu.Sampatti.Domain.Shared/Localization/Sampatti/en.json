@@ -24,8 +24,8 @@
     "Menu:Organization": "Organisation",
     "Menu:Organization.Employees": "Employees",
     "Menu:Organization.Departments": "Departments",
-    "Menu:Organization.Sections": "Sections",
     "Menu:Organization.Locations": "Locations",
+    "Menu:Organization.Depots": "Depots",
 
     "Actions": "Actions",
     "Edit": "Edit",
