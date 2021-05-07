@@ -42,8 +42,8 @@
                                         return l('DepotDeleteConfirmationText', data.record.name.toUpperCase());
                                     },
                                     action: function (data) {
-                                        bindu.sampatti.locations.location
-                                            .delete(data.record.id)
+                                        bindu.sampatti.depots.depot
+                                            .deleteDepot(data.record.id)
                                             .then(function () {
                                                 abp.notify.success(data.record.name.toUpperCase() + " " + l("SuccessfullyDeleted"), "Delete Location");
                                                 abp.ui.setBusy("#DepotTable");
