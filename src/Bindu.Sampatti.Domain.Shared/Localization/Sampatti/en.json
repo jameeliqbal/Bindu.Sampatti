@@ -90,7 +90,9 @@
     "DepotStatusInActive": "In-Active",
     "DepotDeleteConfirmationText": "Do you wish to DELETE this Depot: {0}",
 
-    "Sampatti:00001": "There is already a Location with the same name: {name}"
+    "Sampatti:00001": "There is already a Location with the same name: {name}",
+    "Sampatti:00002": "There is already a Depot with the same name: {name}",
+    "Sampatti:00003": "There is already a Plant with the same name: {name}"
 
   }
 }
