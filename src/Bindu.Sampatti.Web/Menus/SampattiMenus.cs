@@ -26,6 +26,7 @@
         public const string Departments = Organization + ".Departments";
         public const string Locations = Organization + ".Locations";
         public const string Depots = Organization + ".Depots";
+        public const string Plants = Organization + ".Plants";
 
     }
 }
