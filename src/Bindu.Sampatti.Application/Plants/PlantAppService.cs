@@ -120,7 +120,7 @@ namespace Bindu.Sampatti.Plants
             var locations = await _locationRepository.GetListAsync();
             var locationsLookupDto = ObjectMapper.Map<List<Location>, List<LocationLookupDto>>(locations);
 
-            return new ListResultDto<LocationLookupDto>(locationsLookupDto);
+            return new ListResultDto<LocationLookupDto>(locationsLookupDto);    
         }
 
         private static string NormalizeSorting(string sorting)

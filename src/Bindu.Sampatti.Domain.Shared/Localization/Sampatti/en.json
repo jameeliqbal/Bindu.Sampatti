@@ -82,6 +82,7 @@
 
     "Depots": "Depots",
     "AddNewDepot": "Add New Depot",
+    "DepotNew": "Add New Depot",
     "DepotUpdate": "Edit Depot",
     "DepotName": "Depot Name",
     "DepotLocation": "Location of Depot",
@@ -91,7 +92,7 @@
     "DepotDeleteConfirmationText": "Do you wish to DELETE this Depot: {0}",
 
     "Plants": "Plants",
-    "AddNewPlant": "Add New Plant",
+    "PlantNew": "Add New Plant",
     "PlantUpdate": "Edit Plant",
     "PlantName": "Plant Name",
     "PlantLocation": "Location of Plant",

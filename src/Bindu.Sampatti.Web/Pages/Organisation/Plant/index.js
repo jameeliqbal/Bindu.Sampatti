@@ -16,7 +16,7 @@
 
     var editModal = new abp.ModalManager(abp.appPath + "organisation/depot/editmodal");
 
-    var depotDataTable = $("#PlantTable").DataTable(
+    var plantDataTable = $("#PlantTable").DataTable(
         abp.libs.datatables.normalizeConfiguration({
             serverSide: true,
             paging: true,
@@ -81,9 +81,9 @@
 
 
     //ADD NEW DEPOT
-    var createModal = new abp.ModalManager(abp.appPath + "organisation/depot/createModal");
+    var createModal = new abp.ModalManager(abp.appPath + "organisation/plant/createModal");
 
-    $("#NewDepotButton").click(function (e) {
+    $("#NewPlantButton").click(function (e) {
         e.preventDefault();
 
         createModal.open();
@@ -91,13 +91,13 @@
 
     createModal.onResult(function (e, d) {
 
-        abp.ui.setBusy("#DepotTable");
-        abp.notify.success(d.responseText.toUpperCase() + " added successfully!", "New Depot");
+        abp.ui.setBusy("#PlantTable");
+        abp.notify.success(d.responseText.toUpperCase() + " added successfully!", "New Plant");
     });
 
     createModal.onClose(function () {
 
-        depotDataTable.ajax.reload();
+        plantDataTable.ajax.reload();
 
     });
 

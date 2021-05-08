@@ -15,7 +15,7 @@ namespace Bindu.Sampatti
             CreateMap<Depot, DepotDto>();
             CreateMap<Bindu.Sampatti.Locations.Location, Bindu.Sampatti.Depots.LocationLookupDto>();
             CreateMap<Bindu.Sampatti.Plants.Plant, Bindu.Sampatti.Plants.PlantDto>();
-            
+            CreateMap<Bindu.Sampatti.Locations.Location, Bindu.Sampatti.Plants.LocationLookupDto>();
         }
     }
 }
