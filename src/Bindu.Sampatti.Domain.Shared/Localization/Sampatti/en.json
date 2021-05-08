@@ -92,7 +92,12 @@
 
     "Plants": "Plants",
     "AddNewPlant": "Add New Plant",
-
+    "PlantUpdate": "Edit Plant",
+    "PlantName": "Plant Name",
+    "PlantLocation": "Location of Plant",
+    "PlantStatus": "Status",
+    "PlantStatusActive": "Active",
+    "PlantStatusInActive": "In-Active",
 
 
     "Sampatti:00001": "There is already a Location with the same name: {name}",
