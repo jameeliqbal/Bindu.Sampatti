@@ -78,7 +78,7 @@
     "LocationStatusActive": "Active",
     "LocationStatusInActive": "In-Active",
     "LocationNew": "New Location",
-    "LocationDeleteConfirmationText": "Do you wish to DELETE this Location: {0}",
+    "LocationDeleteConfirmationText": "Do you wish to DELETE this Location?: {0}",
 
     "Depots": "Depots",
     "AddNewDepot": "Add New Depot",
@@ -89,7 +89,7 @@
     "DepotStatus": "Status",
     "DepotStatusActive": "Active",
     "DepotStatusInActive": "In-Active",
-    "DepotDeleteConfirmationText": "Do you wish to DELETE this Depot: {0}",
+    "DepotDeleteConfirmationText": "Do you wish to DELETE this Depot?: {0}",
 
     "Plants": "Plants",
     "PlantNew": "Add New Plant",
@@ -99,6 +99,7 @@
     "PlantStatus": "Status",
     "PlantStatusActive": "Active",
     "PlantStatusInActive": "In-Active",
+    "PlantDeleteConfirmationText": "Do you wish to DELETE this Plant?: {0}",
 
 
     "Sampatti:00001": "There is already a Location with the same name: {name}",

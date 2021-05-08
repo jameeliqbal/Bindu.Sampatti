@@ -39,15 +39,15 @@
                                 {
                                     text: l('Delete'),
                                     confirmMessage: function (data) {
-                                        return l('DepotDeleteConfirmationText', data.record.name.toUpperCase());
+                                        return l('PlantDeleteConfirmationText', data.record.name.toUpperCase());
                                     },
                                     action: function (data) {
-                                        bindu.sampatti.depots.depot
-                                            .deleteDepot(data.record.id)
+                                        bindu.sampatti.plants.plant
+                                            .deletePlant(data.record.id)
                                             .then(function () {
                                                 abp.notify.success(data.record.name.toUpperCase() + " " + l("SuccessfullyDeleted"), "Delete Location");
                                                 abp.ui.setBusy("#DepotTable");
-                                                depotDataTable.ajax.reload();
+                                                plantDataTable.ajax.reload();
                                             });
                                     }
                                 }
