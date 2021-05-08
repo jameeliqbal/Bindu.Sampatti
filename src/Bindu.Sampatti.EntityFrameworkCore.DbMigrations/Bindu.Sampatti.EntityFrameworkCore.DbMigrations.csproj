@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Bindu.Sampatti.EntityFrameworkCore\Bindu.Sampatti.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\Bindu.Sampatti.HttpApi\Bindu.Sampatti.HttpApi.csproj" />
   </ItemGroup>
 
   <ItemGroup>
