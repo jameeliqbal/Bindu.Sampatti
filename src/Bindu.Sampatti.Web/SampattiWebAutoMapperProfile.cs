@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Bindu.Sampatti.Depots;
 using Bindu.Sampatti.Locations;
- 
+using Bindu.Sampatti.Plants;
 
 namespace Bindu.Sampatti.Web
 {
@@ -27,6 +27,10 @@ namespace Bindu.Sampatti.Web
             //.ForMember(dest=>dest.Location,
             //            opt=>opt.MapFrom(src=>src.LocationName));
             CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Depot.EditModalModel.EditDepotViewModal, UpdateDepotDto>();
+
+            CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Plant.CreateModalModel.CreatePlantViewModal, CreatePlantDto>();
+            CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Plant.EditModalModel.EditPlantViewModal, UpdatePlantDto>();
+            CreateMap<PlantDto, Bindu.Sampatti.Web.Pages.Organisation.Plant.EditModalModel.EditPlantViewModal>();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Bindu.Sampatti.Depots;
 using Bindu.Sampatti.Locations;
+using Bindu.Sampatti.Plants;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,15 +17,21 @@ namespace Bindu.Sampatti
         private readonly LocationManager _locationManager;
         private readonly IDepotRepository _depotRepository;
         private readonly DepotManager _depotManager;
+        private readonly IPlantRepository _plantRepository;
+        private readonly PlantManager _plantManager;
 
         public SampattiDataSeederContributor(ILocationRepository locationRepo, LocationManager locationManager,
-                                                IDepotRepository depotRepository, DepotManager depotManager)
+                                                IDepotRepository depotRepository, DepotManager depotManager,
+                                                IPlantRepository plantRepository, PlantManager plantManager)
         {
             _locationRepo = locationRepo;
             _locationManager = locationManager;
 
             _depotRepository = depotRepository;
             _depotManager = depotManager;
+
+            _plantRepository = plantRepository;
+            _plantManager = plantManager;
         }
 
         public async Task SeedAsync(DataSeedContext context)
@@ -49,6 +56,19 @@ namespace Bindu.Sampatti
                 var depotFour = await _depotManager.CreateAsync("Depot FOUR", locations[1].Id, "some notes about depot four", true);
 
                 await _depotRepository.InsertManyAsync(new List<Depot> { depotOne, depotTwo, depotThree, depotFour});
+
+            }
+
+            if (await _plantRepository.GetCountAsync() <= 0)
+            {
+                var locations = await _locationRepo.GetListAsync();
+
+                var plantOne = await _plantManager.CreateAsync("plant ONE", locations[0].Id, "some notes about plant one", true);
+                var plantTwo = await _plantManager.CreateAsync("plant TWO", locations[1].Id, "some notes about plant two", true);
+                var plantThree = await _plantManager.CreateAsync("plant THREE", locations[2].Id, "some notes about plant three", true);
+                var plantFour = await _plantManager.CreateAsync("plant FOUR", locations[1].Id, "some notes about plant four", true);
+
+                await _plantRepository.InsertManyAsync(new List<Plant> { plantOne, plantTwo, plantThree, plantFour });
 
             }
         }

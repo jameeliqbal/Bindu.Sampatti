@@ -1,0 +1,29 @@
+﻿@page
+
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Bindu.Sampatti.Localization
+@using Bindu.Sampatti.Web.Pages.Organisation.Plant
+
+@model EditModalModel
+
+@inject IStringLocalizer<SampattiResource> L
+
+@{
+    Layout = null;
+}
+
+<form asp-page="/organisation/plant/editmodal">
+    <abp-modal>
+        <abp-modal-header title="@L["PlantUpdate"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="ExistingPlant.Id" type="hidden" />
+            <abp-select asp-for="ExistingPlant.Location" asp-items="@Model.Locations" label="@L["PlantLocation"].Value" />
+            <abp-input asp-for="ExistingPlant.Name" />
+            <abp-input asp-for="ExistingPlant.Notes" />
+            <abp-radio asp-for="ExistingPlant.Status" asp-items="@Model.PlantStatus" label="@L["PlantStatus"].Value" inline="true" />
+
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Save|AbpModalButtons.Cancel)"></abp-modal-footer>
+    </abp-modal>
+</form>

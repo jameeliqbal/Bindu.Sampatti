@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Bindu.Sampatti.Depots;
-using Bindu.Sampatti.Locations;
+ 
 
 namespace Bindu.Sampatti
 {
@@ -11,9 +11,11 @@ namespace Bindu.Sampatti
             /* You can configure your AutoMapper mapping configuration here.
              * Alternatively, you can split your mapping configurations
              * into multiple profile classes for a better organization. */
-            CreateMap<Location, LocationDto>();
+            CreateMap<Bindu.Sampatti.Locations.Location, Bindu.Sampatti.Locations.LocationDto>();
             CreateMap<Depot, DepotDto>();
-            CreateMap<Location, LocationLookupDto>();
+            CreateMap<Bindu.Sampatti.Locations.Location, Bindu.Sampatti.Depots.LocationLookupDto>();
+            CreateMap<Bindu.Sampatti.Plants.Plant, Bindu.Sampatti.Plants.PlantDto>();
+            CreateMap<Bindu.Sampatti.Locations.Location, Bindu.Sampatti.Plants.LocationLookupDto>();
         }
     }
 }
