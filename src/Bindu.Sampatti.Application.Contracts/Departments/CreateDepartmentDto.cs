@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Bindu.Sampatti.Departments
 {
-    class CreateDepartmentDto
+    public class CreateDepartmentDto
     {
         [Required]
         [StringLength(DepartmentConsts.MaxNameLength)]
