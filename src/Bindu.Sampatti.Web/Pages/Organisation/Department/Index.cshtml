@@ -1,0 +1,31 @@
+﻿@page
+
+@using Microsoft.Extensions.Localization
+@using Bindu.Sampatti.Localization
+@using Bindu.Sampatti.Web.Pages.Organisation.Department
+
+@inject IStringLocalizer<SampattiResource> L
+
+@model IndexModel
+
+@section Scripts{
+    <abp-script src="/Pages/Organisation/Plant/index.js" />
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Departments"]</abp-card-title>
+            </abp-column>
+
+            <abp-column size-md="_6" class="text-right">
+                <abp-button id="NewPlantButton" text="@L["DepartmentNew"].Value" icon="plus" button-type="Primary" />
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+
+    <abp-card-body>
+        <abp-table id="DepartmentTable" striped-rows="true" hoverable-rows="true"></abp-table>
+    </abp-card-body>
+</abp-card>
