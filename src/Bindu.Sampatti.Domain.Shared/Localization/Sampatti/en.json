@@ -105,11 +105,10 @@
     "Departments": "Departments",
     "DepartmentNew": "Add New Department",
     "PlantUpdate": "Edit Plant",
-    "PlantName": "Plant Name",
-    "PlantLocation": "Location of Plant",
-    "PlantStatus": "Status",
-    "PlantStatusActive": "Active",
-    "PlantStatusInActive": "In-Active",
+    "DepartmentName": "Department Name",
+    "DepartmentStatus": "Status",
+    "DepartmentStatusActive": "Active",
+    "DepartmentStatusInActive": "In-Active",
     "PlantDeleteConfirmationText": "Do you wish to DELETE this Plant?: {0}",
 
 
