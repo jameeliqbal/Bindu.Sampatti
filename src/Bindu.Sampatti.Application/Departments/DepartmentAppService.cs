@@ -45,7 +45,7 @@ namespace Bindu.Sampatti.Departments
 
             //set paging info
             query = query
-                .OrderBy(input.Sorting)
+                .OrderBy(NormalizeSorting(input.Sorting))
                 .Skip(input.SkipCount)
                 .Take(input.MaxResultCount);
 
@@ -97,6 +97,19 @@ namespace Bindu.Sampatti.Departments
             await _DepartmentRepository.DeleteAsync(id);
         }
 
-        
+        private static string NormalizeSorting(string sorting)
+        {
+            if (sorting.IsNullOrEmpty())
+            {
+                return $"department.{nameof(Department.Name)}";
+            }
+
+            if (sorting.Contains("departmentName", StringComparison.OrdinalIgnoreCase))
+            {
+                return sorting.Replace("departmentName", "department.Name", StringComparison.OrdinalIgnoreCase);
+            }
+
+             return $"department.{sorting}";
+        }
     }
 }
