@@ -1,4 +1,5 @@
-﻿using Bindu.Sampatti.Depots;
+﻿using Bindu.Sampatti.Departments;
+using Bindu.Sampatti.Depots;
 using Bindu.Sampatti.Locations;
 using Bindu.Sampatti.Plants;
 using System;
@@ -19,10 +20,13 @@ namespace Bindu.Sampatti
         private readonly DepotManager _depotManager;
         private readonly IPlantRepository _plantRepository;
         private readonly PlantManager _plantManager;
+        private readonly IDepartmentRepository _departmentRepository;
+        private readonly DepartmentManager _departmentManager;
 
         public SampattiDataSeederContributor(ILocationRepository locationRepo, LocationManager locationManager,
                                                 IDepotRepository depotRepository, DepotManager depotManager,
-                                                IPlantRepository plantRepository, PlantManager plantManager)
+                                                IPlantRepository plantRepository, PlantManager plantManager,
+                                                IDepartmentRepository departmentRepository, DepartmentManager departmentManager)
         {
             _locationRepo = locationRepo;
             _locationManager = locationManager;
@@ -32,6 +36,10 @@ namespace Bindu.Sampatti
 
             _plantRepository = plantRepository;
             _plantManager = plantManager;
+
+            _departmentManager = departmentManager;
+            _departmentRepository = departmentRepository;
+
         }
 
         public async Task SeedAsync(DataSeedContext context)
@@ -70,6 +78,15 @@ namespace Bindu.Sampatti
 
                 await _plantRepository.InsertManyAsync(new List<Plant> { plantOne, plantTwo, plantThree, plantFour });
 
+            }
+
+            if (await _departmentRepository.GetCountAsync() <=0)
+            {
+                var departmentOne = await _departmentManager.CreateAsync("Department ONE", "some notes about Dept 1", true);
+                var departmentTwo = await _departmentManager.CreateAsync("Department TWO", "some notes about Dept 2", true);
+                var departmentThree = await _departmentManager.CreateAsync("Department THREE", "some notes about Dept 3", true);
+
+                await _departmentRepository.InsertManyAsync(new List<Department> { departmentOne, departmentTwo, departmentThree });
             }
         }
     }
