@@ -77,9 +77,9 @@
 
 
     //ADD NEW DEPOT
-    var createModal = new abp.ModalManager(abp.appPath + "organisation/plant/createModal");
+    var createModal = new abp.ModalManager(abp.appPath + "organisation/department/createModal");
 
-    $("#NewPlantButton").click(function (e) {
+    $("#NewDepartmentButton").click(function (e) {
         e.preventDefault();
 
         createModal.open();
@@ -87,13 +87,13 @@
 
     createModal.onResult(function (e, d) {
 
-        abp.ui.setBusy("#PlantTable");
-        abp.notify.success(d.responseText.toUpperCase() + " added successfully!", "New Plant");
+        abp.ui.setBusy("#DepartmentTable");
+        abp.notify.success(d.responseText.toUpperCase() + " added successfully!", "New Department");
     });
 
     createModal.onClose(function () {
 
-        plantDataTable.ajax.reload();
+        departmentDataTable.ajax.reload();
 
     });
 
