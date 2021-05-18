@@ -45,7 +45,7 @@
                                         bindu.sampatti.plants.plant
                                             .deletePlant(data.record.id)
                                             .then(function () {
-                                                abp.notify.success(data.record.name.toUpperCase() + " " + l("SuccessfullyDeleted"), "Delete Location");
+                                                abp.notify.success(data.record.name.toUpperCase() + " " + l("SuccessfullyDeleted"), "Delete Plant");
                                                 abp.ui.setBusy("#DepotTable");
                                                 plantDataTable.ajax.reload();
                                             });

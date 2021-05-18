@@ -45,7 +45,7 @@
                                         bindu.sampatti.depots.depot
                                             .deleteDepot(data.record.id)
                                             .then(function () {
-                                                abp.notify.success(data.record.name.toUpperCase() + " " + l("SuccessfullyDeleted"), "Delete Location");
+                                                abp.notify.success(data.record.name.toUpperCase() + " " + l("SuccessfullyDeleted"), "Delete Depot");
                                                 abp.ui.setBusy("#DepotTable");
                                                 depotDataTable.ajax.reload();
                                             });

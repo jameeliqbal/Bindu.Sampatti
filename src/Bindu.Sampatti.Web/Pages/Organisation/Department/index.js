@@ -45,7 +45,7 @@
                                         bindu.sampatti.departments.department
                                             .delete(data.record.id)
                                             .then(function () {
-                                                abp.notify.success(data.record.name.toUpperCase() + " " + l("SuccessfullyDeleted"), "Delete Location");
+                                                abp.notify.success(data.record.name.toUpperCase() + " " + l("SuccessfullyDeleted"), "Delete Department");
                                                 abp.ui.setBusy("#DepartmentTable");
                                                 departmentDataTable.ajax.reload();
                                             });
