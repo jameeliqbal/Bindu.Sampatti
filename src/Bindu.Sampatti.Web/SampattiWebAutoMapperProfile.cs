@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Bindu.Sampatti.Departments;
 using Bindu.Sampatti.Depots;
 using Bindu.Sampatti.Locations;
 using Bindu.Sampatti.Plants;
@@ -31,6 +32,10 @@ namespace Bindu.Sampatti.Web
             CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Plant.CreateModalModel.CreatePlantViewModal, CreatePlantDto>();
             CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Plant.EditModalModel.EditPlantViewModal, UpdatePlantDto>();
             CreateMap<PlantDto, Bindu.Sampatti.Web.Pages.Organisation.Plant.EditModalModel.EditPlantViewModal>();
+
+            CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Department.CreateModalModel.CreateDepartmentViewModal, CreateDepartmentDto>();
+            CreateMap<DepartmentDto,Bindu.Sampatti.Web.Pages.Organisation.Department.EditModalModel.EditDepartmentViewModal>();
+            CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Department.EditModalModel.EditDepartmentViewModal,UpdateDepartmentDto>();
         }
     }
 }

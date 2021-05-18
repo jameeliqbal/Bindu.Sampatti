@@ -1,0 +1,32 @@
+﻿@page
+
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Bindu.Sampatti.Localization
+@using Bindu.Sampatti.Web.Pages.Organisation.Department
+
+@model CreateModalModel
+
+@inject IStringLocalizer<SampattiResource> L
+
+@{
+    Layout = null;
+}
+
+<form asp-page="/Organisation/department/CreateModal">
+    <abp-modal>
+        <abp-modal-header title="@L["DepartmentNew"].Value"></abp-modal-header>
+
+        <abp-modal-body>
+            <abp-input asp-for="NewDepartment.Name" />
+            <abp-input asp-for="NewDepartment.Notes" />
+            <abp-radio asp-for="NewDepartment.Status" asp-items="@Model.DepartmentStatus" label="@L["DepartmentStatus"].Value" inline="true" />
+
+        </abp-modal-body>
+
+        <abp-modal-footer buttons="@(AbpModalButtons.Save|AbpModalButtons.Cancel)">
+        </abp-modal-footer>
+
+    </abp-modal>
+
+</form>
