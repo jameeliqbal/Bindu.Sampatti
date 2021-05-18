@@ -34,6 +34,8 @@ namespace Bindu.Sampatti.Web
             CreateMap<PlantDto, Bindu.Sampatti.Web.Pages.Organisation.Plant.EditModalModel.EditPlantViewModal>();
 
             CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Department.CreateModalModel.CreateDepartmentViewModal, CreateDepartmentDto>();
+            CreateMap<DepartmentDto,Bindu.Sampatti.Web.Pages.Organisation.Department.EditModalModel.EditDepartmentViewModal>();
+            CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Department.EditModalModel.EditDepartmentViewModal,UpdateDepartmentDto>();
         }
     }
 }

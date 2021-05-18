@@ -14,7 +14,7 @@
         };
     }
 
-    var editModal = new abp.ModalManager(abp.appPath + "organisation/plant/editmodal");
+    var editModal = new abp.ModalManager(abp.appPath + "organisation/department/editmodal");
 
     var departmentDataTable = $("#DepartmentTable").DataTable(
         abp.libs.datatables.normalizeConfiguration({
@@ -100,13 +100,13 @@
 
     //EDIT DEPOT
     editModal.onResult(function (e, d) {
-        abp.ui.setBusy("#PlantTable");
-        abp.notify.success(d.responseText.toUpperCase() + " saved successfully!", "Update Plant");
+        abp.ui.setBusy("#DepartmentTable");
+        abp.notify.success(d.responseText.toUpperCase() + " saved successfully!", "Update Department");
     });
 
     editModal.onClose(function () {
 
-        plantDataTable.ajax.reload();
+        departmentDataTable.ajax.reload();
 
     });
 
