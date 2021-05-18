@@ -109,7 +109,7 @@
     "DepartmentStatus": "Status",
     "DepartmentStatusActive": "Active",
     "DepartmentStatusInActive": "In-Active",
-    "PlantDeleteConfirmationText": "Do you wish to DELETE this Plant?: {0}",
+    "DepartmentDeleteConfirmationText": "Do you wish to DELETE this Department?: {0}",
 
 
     "Sampatti:00001": "There is already a Location with the same name: {name}",
