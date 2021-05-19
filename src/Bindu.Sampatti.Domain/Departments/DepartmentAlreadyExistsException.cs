@@ -9,7 +9,7 @@ namespace Bindu.Sampatti.Departments
 {
     public class DepartmentAlreadyExistsException : BusinessException
     {
-        public DepartmentAlreadyExistsException(string name) : base(SampattiDomainErrorCodes.PlantAlreadyExists)
+        public DepartmentAlreadyExistsException(string name) : base(SampattiDomainErrorCodes.DepartmentAlreadyExists)
         {
             WithData("name", name);
         }
