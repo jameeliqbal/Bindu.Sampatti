@@ -71,6 +71,16 @@ namespace Bindu.Sampatti.EntityFrameworkCore
                     .HasMaxLength(DepartmentConsts.MaxNameLength);
                 b.HasIndex(x => x.Name);
             });
+
+            builder.Entity<Department>(b =>
+            {
+                b.ToTable(SampattiConsts.DbTablePrefix + "Designations", SampattiConsts.DbSchema);
+                b.ConfigureByConvention();
+                b.Property(x => x.Name)
+                    .IsRequired()
+                    .HasMaxLength(DepartmentConsts.MaxNameLength);
+                b.HasIndex(x => x.Name);
+            });
         }
     }
 }
