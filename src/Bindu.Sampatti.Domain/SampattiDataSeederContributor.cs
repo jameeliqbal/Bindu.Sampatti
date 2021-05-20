@@ -1,5 +1,6 @@
 ﻿using Bindu.Sampatti.Departments;
 using Bindu.Sampatti.Depots;
+using Bindu.Sampatti.Designations;
 using Bindu.Sampatti.Locations;
 using Bindu.Sampatti.Plants;
 using System;
@@ -22,11 +23,15 @@ namespace Bindu.Sampatti
         private readonly PlantManager _plantManager;
         private readonly IDepartmentRepository _departmentRepository;
         private readonly DepartmentManager _departmentManager;
+        private readonly IDesignationRepository _designationRepository;
+        private readonly DesignationManager _designationManager;
 
         public SampattiDataSeederContributor(ILocationRepository locationRepo, LocationManager locationManager,
                                                 IDepotRepository depotRepository, DepotManager depotManager,
                                                 IPlantRepository plantRepository, PlantManager plantManager,
-                                                IDepartmentRepository departmentRepository, DepartmentManager departmentManager)
+                                                IDepartmentRepository departmentRepository, DepartmentManager departmentManager,
+                                                IDesignationRepository designationRepository, DesignationManager designationManager
+            )
         {
             _locationRepo = locationRepo;
             _locationManager = locationManager;
@@ -39,6 +44,9 @@ namespace Bindu.Sampatti
 
             _departmentManager = departmentManager;
             _departmentRepository = departmentRepository;
+
+            _designationManager = designationManager;
+            _designationRepository = designationRepository;
 
         }
 
@@ -87,6 +95,15 @@ namespace Bindu.Sampatti
                 var departmentThree = await _departmentManager.CreateAsync("Department THREE", "some notes about Dept 3", true);
 
                 await _departmentRepository.InsertManyAsync(new List<Department> { departmentOne, departmentTwo, departmentThree });
+            }
+
+            if (await _designationRepository.GetCountAsync() <= 0)
+            {
+                var designationOne = await _designationManager.CreateAsync("Designation ONE", "some notes about Designation 1", true);
+                var designationTwo = await _designationManager.CreateAsync("Designation TWO", "some notes about Designation 2", true);
+                var designationThree = await _designationManager.CreateAsync("Designation THREE", "some notes about Designation 3", true);
+
+                await _designationRepository.InsertManyAsync(new List<Designation> { designationOne, designationTwo, designationThree });
             }
         }
     }
