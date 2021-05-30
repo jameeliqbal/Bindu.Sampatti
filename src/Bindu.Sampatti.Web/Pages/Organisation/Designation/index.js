@@ -77,9 +77,9 @@
 
 
     //ADD NEW DEPOT
-    var createModal = new abp.ModalManager(abp.appPath + "organisation/department/createModal");
+    var createModal = new abp.ModalManager(abp.appPath + "organisation/designation/createModal");
 
-    $("#NewDepartmentButton").click(function (e) {
+    $("#NewDesignationButton").click(function (e) {
         e.preventDefault();
 
         createModal.open();
@@ -87,13 +87,13 @@
 
     createModal.onResult(function (e, d) {
 
-        abp.ui.setBusy("#DepartmentTable");
-        abp.notify.success(d.responseText.toUpperCase() + " added successfully!", "New Department");
+        abp.ui.setBusy("#DesignationTable");
+        abp.notify.success(d.responseText.toUpperCase() + " added successfully!", "New Designation");
     });
 
     createModal.onClose(function () {
 
-        departmentDataTable.ajax.reload();
+        designationDataTable.ajax.reload();
 
     });
 

@@ -1,0 +1,32 @@
+﻿@page
+
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Bindu.Sampatti.Localization
+@using Bindu.Sampatti.Web.Pages.Organisation.Designation
+
+@model CreateModalModel
+
+@inject IStringLocalizer<SampattiResource> L
+
+@{
+    Layout = null;
+}
+
+<form asp-page="/Organisation/designation/CreateModal">
+    <abp-modal>
+        <abp-modal-header title="@L["DesignationNew"].Value"></abp-modal-header>
+
+        <abp-modal-body>
+            <abp-input asp-for="NewDesignation.Name" />
+            <abp-input asp-for="NewDesignation.Notes" />
+            <abp-radio asp-for="NewDesignation.Status" asp-items="@Model.DesignationStatus" label="@L["DesignationStatus"].Value" inline="true" />
+
+        </abp-modal-body>
+
+        <abp-modal-footer buttons="@(AbpModalButtons.Save|AbpModalButtons.Cancel)">
+        </abp-modal-footer>
+
+    </abp-modal>
+
+</form>
