@@ -39,15 +39,16 @@
                                 {
                                     text: l('Delete'),
                                     confirmMessage: function (data) {
-                                        return l('DepartmentDeleteConfirmationText', data.record.name.toUpperCase());
+                                        return l('DesignationDeleteConfirmationText', data.record.name.toUpperCase());
                                     },
                                     action: function (data) {
-                                        bindu.sampatti.departments.department
+                                        bindu.sampatti.designations.designation
                                             .delete(data.record.id)
                                             .then(function () {
-                                                abp.notify.success(data.record.name.toUpperCase() + " " + l("SuccessfullyDeleted"), "Delete Department");
-                                                abp.ui.setBusy("#DepartmentTable");
-                                                departmentDataTable.ajax.reload();
+                                                abp.notify.success(data.record.name.toUpperCase() + " " + l("SuccessfullyDeleted"),
+                                                    "Delete Designation");
+                                                abp.ui.setBusy("#DesignationTable");
+                                                designationDataTable.ajax.reload();
                                             });
                                     }
                                 }

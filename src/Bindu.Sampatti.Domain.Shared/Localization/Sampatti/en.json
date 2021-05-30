@@ -118,7 +118,7 @@
     "DesignationStatus": "Status",
     "DesignationStatusActive": "Active",
     "DesignationStatusInActive": "In-Active",
-    "DepartmentDeleteConfirmationText": "Do you wish to DELETE this Department?: {0}",
+    "DesignationDeleteConfirmationText": "Do you wish to DELETE this Designation?: {0}",
 
     "Sampatti:00001": "There is already a Location with the same name: {name}",
     "Sampatti:00002": "There is already a Depot with the same name: {name}",
