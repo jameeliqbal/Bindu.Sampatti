@@ -14,7 +14,7 @@
         };
     }
 
-    var editModal = new abp.ModalManager(abp.appPath + "organisation/department/editmodal");
+    var editModal = new abp.ModalManager(abp.appPath + "organisation/designation/editmodal");
 
     var designationDataTable = $("#DesignationTable").DataTable(
         abp.libs.datatables.normalizeConfiguration({
@@ -100,13 +100,13 @@
 
     //EDIT DEPOT
     editModal.onResult(function (e, d) {
-        abp.ui.setBusy("#DepartmentTable");
-        abp.notify.success(d.responseText.toUpperCase() + " saved successfully!", "Update Department");
+        abp.ui.setBusy("#DesignationTable");
+        abp.notify.success(d.responseText.toUpperCase() + " saved successfully!", "Update Designation");
     });
 
     editModal.onClose(function () {
 
-        departmentDataTable.ajax.reload();
+        designationDataTable.ajax.reload();
 
     });
 
