@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Bindu.Sampatti.Departments;
 using Bindu.Sampatti.Depots;
- 
+using Bindu.Sampatti.Designations;
 
 namespace Bindu.Sampatti
 {
@@ -18,6 +18,7 @@ namespace Bindu.Sampatti
             CreateMap<Bindu.Sampatti.Plants.Plant, Bindu.Sampatti.Plants.PlantDto>();
             CreateMap<Bindu.Sampatti.Locations.Location, Bindu.Sampatti.Plants.LocationLookupDto>();
             CreateMap<Department, DepartmentDto>();
+            CreateMap<Designation,DesignationDto>();
         }
     }
 }

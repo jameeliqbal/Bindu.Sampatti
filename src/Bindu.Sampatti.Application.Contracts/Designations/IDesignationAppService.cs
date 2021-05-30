@@ -1,5 +1,4 @@
-﻿using Bindu.Sampatti.Departments;
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
@@ -10,11 +9,11 @@ namespace Bindu.Sampatti.Designations
     {
         Task<DesignationDto> GetAsync(Guid id);
 
-        Task<PagedResultDto<DesignationDto>> GetListAsync(GetDepartmentListDto input);
+        Task<PagedResultDto<DesignationDto>> GetListAsync(GetDesignationListDto input);
 
-        Task<DesignationDto> CreateAsync(CreateDepartmentDto input);
+        Task<DesignationDto> CreateAsync(CreateDesignationDto input);
 
-        Task UpdateAsync(Guid id, UpdateDepartmentDto input);
+        Task UpdateAsync(Guid id, UpdateDesignationDto input);
 
         Task DeleteAsync(Guid id);
     }
