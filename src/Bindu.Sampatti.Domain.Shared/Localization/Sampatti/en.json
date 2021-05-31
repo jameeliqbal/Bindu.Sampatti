@@ -22,6 +22,7 @@
     "Menu:Depriciation.DepriciationReport": "Depriciation Report",
 
     "Menu:Organization": "Organisation",
+    "Menu:Organization.Designations": "Designations",
     "Menu:Organization.Employees": "Employees",
     "Menu:Organization.Departments": "Departments",
     "Menu:Organization.Locations": "Locations",
@@ -111,10 +112,20 @@
     "DepartmentStatusInActive": "In-Active",
     "DepartmentDeleteConfirmationText": "Do you wish to DELETE this Department?: {0}",
 
+    "Designations": "Designations",
+    "DesignationNew": "Add New Designation",
+    "DesignationUpdate": "Edit Designation",
+    "DesignationName": "Designation Name",
+    "DesignationStatus": "Status",
+    "DesignationStatusActive": "Active",
+    "DesignationStatusInActive": "In-Active",
+    "DesignationDeleteConfirmationText": "Do you wish to DELETE this Designation?: {0}",
 
     "Sampatti:00001": "There is already a Location with the same name: {name}",
     "Sampatti:00002": "There is already a Depot with the same name: {name}",
-    "Sampatti:00003": "There is already a Plant with the same name: {name}"
+    "Sampatti:00003": "There is already a Plant with the same name: {name}",
+    "Sampatti:00004": "There is already a Department with the same name: {name}",
+    "Sampatti:00005": "There is already a Designation with the same name: {name}"
 
   }
 }

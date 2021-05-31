@@ -23,6 +23,7 @@
 
         public const string Organization = Prefix + ".Organization";
         public const string Employees = Organization + ".Employees";
+        public const string Designations = Organization + ".Designations";
         public const string Departments = Organization + ".Departments";
         public const string Locations = Organization + ".Locations";
         public const string Depots = Organization + ".Depots";

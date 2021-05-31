@@ -1,5 +1,6 @@
 ﻿using Bindu.Sampatti.Departments;
 using Bindu.Sampatti.Depots;
+using Bindu.Sampatti.Designations;
 using Bindu.Sampatti.Locations;
 using Bindu.Sampatti.Plants;
 using Microsoft.EntityFrameworkCore;
@@ -69,6 +70,16 @@ namespace Bindu.Sampatti.EntityFrameworkCore
                 b.Property(x => x.Name)
                     .IsRequired()
                     .HasMaxLength(DepartmentConsts.MaxNameLength);
+                b.HasIndex(x => x.Name);
+            });
+
+            builder.Entity<Designation>(b =>
+            {
+                b.ToTable(SampattiConsts.DbTablePrefix + "Designations", SampattiConsts.DbSchema);
+                b.ConfigureByConvention();
+                b.Property(x => x.Name)
+                    .IsRequired()
+                    .HasMaxLength(DesignationConsts.MaxNameLength);
                 b.HasIndex(x => x.Name);
             });
         }
