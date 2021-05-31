@@ -22,6 +22,7 @@
     "Menu:Depriciation.DepriciationReport": "Depriciation Report",
 
     "Menu:Organization": "Organisation",
+    "Menu:Organization.Designations": "Designations",
     "Menu:Organization.Employees": "Employees",
     "Menu:Organization.Departments": "Departments",
     "Menu:Organization.Locations": "Locations",
