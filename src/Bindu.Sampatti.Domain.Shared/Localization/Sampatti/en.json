@@ -125,7 +125,10 @@
     "Sampatti:00002": "There is already a Depot with the same name: {name}",
     "Sampatti:00003": "There is already a Plant with the same name: {name}",
     "Sampatti:00004": "There is already a Department with the same name: {name}",
-    "Sampatti:00005": "There is already a Designation with the same name: {name}"
+    "Sampatti:00005": "There is already a Designation with the same name: {name}",
+    "Sampatti:00006": "There is already a Employee with the same name: {name}",
+    "Sampatti:00007": "There is already a Employee with the same code: {code}"
+
 
   }
 }
