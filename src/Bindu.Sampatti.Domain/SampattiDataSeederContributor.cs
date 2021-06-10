@@ -1,6 +1,7 @@
 ﻿using Bindu.Sampatti.Departments;
 using Bindu.Sampatti.Depots;
 using Bindu.Sampatti.Designations;
+using Bindu.Sampatti.Employees;
 using Bindu.Sampatti.Locations;
 using Bindu.Sampatti.Plants;
 using System;
@@ -25,12 +26,15 @@ namespace Bindu.Sampatti
         private readonly DepartmentManager _departmentManager;
         private readonly IDesignationRepository _designationRepository;
         private readonly DesignationManager _designationManager;
+        private readonly IEmployeeRepository _employeeRepository;
+        private readonly EmployeeManager _employeeManager;
 
         public SampattiDataSeederContributor(ILocationRepository locationRepo, LocationManager locationManager,
                                                 IDepotRepository depotRepository, DepotManager depotManager,
                                                 IPlantRepository plantRepository, PlantManager plantManager,
                                                 IDepartmentRepository departmentRepository, DepartmentManager departmentManager,
-                                                IDesignationRepository designationRepository, DesignationManager designationManager
+                                                IDesignationRepository designationRepository, DesignationManager designationManager,
+                                                IEmployeeRepository employeeRepository, EmployeeManager employeeManager
             )
         {
             _locationRepo = locationRepo;
@@ -47,6 +51,9 @@ namespace Bindu.Sampatti
 
             _designationManager = designationManager;
             _designationRepository = designationRepository;
+
+            _employeeManager = employeeManager;
+            _employeeRepository = employeeRepository;
 
         }
 
@@ -90,20 +97,32 @@ namespace Bindu.Sampatti
 
             if (await _departmentRepository.GetCountAsync() <=0)
             {
-                var departmentOne = await _departmentManager.CreateAsync("Department ONE", "some notes about Dept 1", true);
-                var departmentTwo = await _departmentManager.CreateAsync("Department TWO", "some notes about Dept 2", true);
-                var departmentThree = await _departmentManager.CreateAsync("Department THREE", "some notes about Dept 3", true);
+                //var departmentOne = await _departmentManager.CreateAsync("Department ONE", "some notes about Dept 1", true);
+                //var departmentTwo = await _departmentManager.CreateAsync("Department TWO", "some notes about Dept 2", true);
+                //var departmentThree = await _departmentManager.CreateAsync("Department THREE", "some notes about Dept 3", true);
+                var designationUnknown = await _departmentManager.CreateAsync("Un-Assigned", "Value assigned when department is unknown", true);
 
-                await _departmentRepository.InsertManyAsync(new List<Department> { departmentOne, departmentTwo, departmentThree });
+                await _departmentRepository.InsertManyAsync(new List<Department> { designationUnknown });// departmentOne, departmentTwo, departmentThree });
             }
 
             if (await _designationRepository.GetCountAsync() <= 0)
             {
-                var designationOne = await _designationManager.CreateAsync("Designation ONE", "some notes about Designation 1", true);
-                var designationTwo = await _designationManager.CreateAsync("Designation TWO", "some notes about Designation 2", true);
-                var designationThree = await _designationManager.CreateAsync("Designation THREE", "some notes about Designation 3", true);
+                //var designationOne = await _designationManager.CreateAsync("Designation ONE", "some notes about Designation 1", true);
+                //var designationTwo = await _designationManager.CreateAsync("Designation TWO", "some notes about Designation 2", true);
+                //var designationThree = await _designationManager.CreateAsync("Designation THREE", "some notes about Designation 3", true);
+                var designationUnknown = await _designationManager.CreateAsync("Un-Assigned", "Value assigned when designation is unknown", true);
 
-                await _designationRepository.InsertManyAsync(new List<Designation> { designationOne, designationTwo, designationThree });
+                await _designationRepository.InsertManyAsync(new List<Designation> { designationUnknown });//, designationOne, designationTwo, designationThree  });
+            }
+
+            if (await _employeeRepository.GetCountAsync() <= 0)
+            {
+                var designation = _designationRepository.SingleOrDefault(d => d.Name == "Un-Assigned").Id;
+                var department = _departmentRepository.SingleOrDefault(d => d.Name == "Un-Assigned").Id;
+
+                var employeeOne = await _employeeManager.CreateAsync("Employee ONE", "1001", designation, department, "some notes about employee ONE", true);
+                var employeeTwo = await _employeeManager.CreateAsync("Employee TWO", "1002", designation, department, "some notes about employee TWO", true);
+                var employeeThree = await _employeeManager.CreateAsync("Employee THREE", "1003", designation, department, "some notes about employee THREE", true);
             }
         }
     }
