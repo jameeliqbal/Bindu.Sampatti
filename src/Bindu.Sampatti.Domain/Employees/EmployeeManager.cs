@@ -30,7 +30,7 @@ namespace Bindu.Sampatti.Employees
 
             Check.NotNullOrWhiteSpace(code, nameof(code));
 
-            var existingEmployeeByCode = await _employeeRepository.FindByEmployeeCode(code);
+            var existingEmployeeByCode = await _employeeRepository.FindByEmployeeCodeAsync(code);
             if (existingEmployeeByCode != null)
             {
                 throw new EmployeeAlreadyExistsByCodeException(code);
@@ -59,7 +59,7 @@ namespace Bindu.Sampatti.Employees
             Check.NotNull(employee, nameof(employee));
             Check.NotNullOrWhiteSpace(newCode, nameof(newCode));
 
-            var existingEmployee = await _employeeRepository.FindByEmployeeCode(newCode);
+            var existingEmployee = await _employeeRepository.FindByEmployeeCodeAsync(newCode);
             if (existingEmployee != null && existingEmployee.Code != employee.Code)
             {
                 throw new EmployeeAlreadyExistsByCodeException(newCode);
