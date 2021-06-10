@@ -9,7 +9,7 @@ namespace Bindu.Sampatti.Employees
 {
     public interface IEmployeeRepository : IRepository<Employee, Guid>
     {
-        Task<Employee> FindByEmployeeCode(string code);
+        Task<Employee> FindByEmployeeCodeAsync(string code);
 
         Task<Employee> FindByNameAsync(string name);
 

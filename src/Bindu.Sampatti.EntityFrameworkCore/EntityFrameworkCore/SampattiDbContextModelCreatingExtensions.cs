@@ -86,25 +86,24 @@ namespace Bindu.Sampatti.EntityFrameworkCore
 
             builder.Entity<Employee>(b =>
             {
-            b.ToTable(SampattiConsts.DbTablePrefix + "Employees", SampattiConsts.DbSchema);
-            b.ConfigureByConvention();
-            b.Property(e => e.Name)
-                .IsRequired()
-                .HasMaxLength(EmployeeConsts.MaxNameLength);
-            b.Property(e => e.Code)
-                .IsRequired()
-                .HasMaxLength(EmployeeConsts.MaxCodeLength);
-            b.HasIndex(e => new { e.Name, e.Code }); //Ref: https://www.learnentityframeworkcore.com/configuration/fluent-api/hasindex-method
+                b.ToTable(SampattiConsts.DbTablePrefix + "Employees", SampattiConsts.DbSchema);
+                b.ConfigureByConvention();
+                b.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(EmployeeConsts.MaxNameLength);
+                b.Property(e => e.Code)
+                    .IsRequired()
+                    .HasMaxLength(EmployeeConsts.MaxCodeLength);
+                b.HasIndex(e => new { e.Name, e.Code }); //Ref: https://www.learnentityframeworkcore.com/configuration/fluent-api/hasindex-method
                 b.HasOne<Designation>()
                     .WithMany()
                     .HasForeignKey(e => e.Designation)
                     .IsRequired();
-
                 b.HasOne<Department>()
                     .WithMany()
                     .HasForeignKey(e => e.Department)
                     .IsRequired();
-                     
+
             });
         }
     }
