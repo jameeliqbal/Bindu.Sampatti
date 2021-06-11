@@ -14,7 +14,7 @@
         };
     }
 
-    var editModal = new abp.ModalManager(abp.appPath + "organisation/depot/editmodal");
+    var editModal = new abp.ModalManager(abp.appPath + "organisation/employee/editmodal");
 
     var employeeDataTable = $("#EmployeeTable").DataTable(
         abp.libs.datatables.normalizeConfiguration({
@@ -110,13 +110,13 @@
 
     //EDIT DEPOT
     editModal.onResult(function (e, d) {
-        abp.ui.setBusy("#DepotTable");
-        abp.notify.success(d.responseText.toUpperCase() + " saved successfully!", "Update Depot");
+        abp.ui.setBusy("#EmployeeTable");
+        abp.notify.success(d.responseText.toUpperCase() + " saved successfully!", "Update Employee");
     });
 
     editModal.onClose(function () {
 
-        depotDataTable.ajax.reload();
+        employeeDataTable.ajax.reload();
 
     });
 
