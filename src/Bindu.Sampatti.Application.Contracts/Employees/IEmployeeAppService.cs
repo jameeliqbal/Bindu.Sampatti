@@ -10,7 +10,7 @@ namespace Bindu.Sampatti.Employees
     public interface IEmployeeAppService : IApplicationService
     {
         Task<EmployeeDto> GetAsync(Guid id);
-        Task<EmployeeDto> GetAsync(string employeeCode);
+        Task<EmployeeDto> GetByEmployeeCodeAsync(string employeeCode);
         Task<PagedResultDto<EmployeeDto>> GetListAsync(GetEmployeeListDto input);
         Task<EmployeeDto> CreateAsync(CreateEmployeeDto input);
         Task UpdateAsync(Guid id, UpdateEmployeeDto input);

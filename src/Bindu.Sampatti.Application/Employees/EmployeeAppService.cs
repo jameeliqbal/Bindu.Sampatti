@@ -65,7 +65,7 @@ namespace Bindu.Sampatti.Employees
             return employeeDto;
         }
 
-        public async Task<EmployeeDto> GetAsync(string employeeCode)
+        public async Task<EmployeeDto> GetByEmployeeCodeAsync(string employeeCode)
         {
             //Get the IQueryable<Employee> from the repository
             var queryable = await _employeeRepository.GetQueryableAsync();
