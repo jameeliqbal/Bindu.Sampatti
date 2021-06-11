@@ -121,6 +121,19 @@
     "DesignationStatusInActive": "In-Active",
     "DesignationDeleteConfirmationText": "Do you wish to DELETE this Designation?: {0}",
 
+    "Employees": "Employees",
+    "EmployeeNew": "Add New Employee",
+    "DesignationUpdate": "Edit Designation",
+    "EmployeeName": "Employee Name",
+    "EmployeeCode": "Code",
+    "EmployeeDesignation": "Designation",
+    "EmployeeDepartment": "Department",
+    "EmployeeStatus": "Status",
+    "EmployeeStatusActive": "Active",
+    "EmployeeStatusInActive": "In-Active",
+    "DesignationDeleteConfirmationText": "Do you wish to DELETE this Designation?: {0}",
+
+
     "Sampatti:00001": "There is already a Location with the same name: {name}",
     "Sampatti:00002": "There is already a Depot with the same name: {name}",
     "Sampatti:00003": "There is already a Plant with the same name: {name}",
