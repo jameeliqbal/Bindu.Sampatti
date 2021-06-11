@@ -11,8 +11,10 @@ namespace Bindu.Sampatti.Employees
         public string Code { get; set; }
 
         public Guid Designation { get; set; }
+        public string DesignationName { get; set; }
 
         public Guid Department { get; set; }
+        public string DepartmentName { get; set; }
 
         public string Notes { get; set; }
         public bool Status { get; set; }

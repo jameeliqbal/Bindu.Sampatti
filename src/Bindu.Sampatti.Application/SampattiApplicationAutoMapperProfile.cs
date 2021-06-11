@@ -2,6 +2,7 @@
 using Bindu.Sampatti.Departments;
 using Bindu.Sampatti.Depots;
 using Bindu.Sampatti.Designations;
+using Bindu.Sampatti.Employees;
 
 namespace Bindu.Sampatti
 {
@@ -19,6 +20,9 @@ namespace Bindu.Sampatti
             CreateMap<Bindu.Sampatti.Locations.Location, Bindu.Sampatti.Plants.LocationLookupDto>();
             CreateMap<Department, DepartmentDto>();
             CreateMap<Designation,DesignationDto>();
+            CreateMap<Employee, EmployeeDto>();
+            CreateMap<Designation, DesignationLookupDto>();
+            CreateMap<Department, DepartmentLookupDto>();
         }
     }
 }
