@@ -131,7 +131,7 @@
     "EmployeeStatus": "Status",
     "EmployeeStatusActive": "Active",
     "EmployeeStatusInActive": "In-Active",
-    "DesignationDeleteConfirmationText": "Do you wish to DELETE this Designation?: {0}",
+    "EmployeeDeleteConfirmationText": "Do you wish to DELETE this Employee?: {0}",
 
 
     "Sampatti:00001": "There is already a Location with the same name: {name}",

@@ -39,15 +39,16 @@
                                 {
                                     text: l('Delete'),
                                     confirmMessage: function (data) {
-                                        return l('DepotDeleteConfirmationText', data.record.name.toUpperCase());
+                                        return l('EmployeeDeleteConfirmationText', data.record.name.toUpperCase());
                                     },
                                     action: function (data) {
-                                        bindu.sampatti.depots.depot
-                                            .deleteDepot(data.record.id)
+                                        bindu.sampatti.employees.employee
+                                            .delete(data.record.id)
                                             .then(function () {
-                                                abp.notify.success(data.record.name.toUpperCase() + " " + l("SuccessfullyDeleted"), "Delete Depot");
-                                                abp.ui.setBusy("#DepotTable");
-                                                depotDataTable.ajax.reload();
+                                                abp.notify.success(data.record.name.toUpperCase() + " " + l("SuccessfullyDeleted"),
+                                                    "Delete Employee");
+                                                abp.ui.setBusy("#EmployeeTable");
+                                                employeeDataTable.ajax.reload();
                                             });
                                     }
                                 }
