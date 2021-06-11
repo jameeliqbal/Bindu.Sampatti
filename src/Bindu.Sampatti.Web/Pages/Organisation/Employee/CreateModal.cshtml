@@ -23,7 +23,7 @@
             <abp-input asp-for="NewEmployee.Name" />
             <abp-input asp-for="NewEmployee.Code" label="@L["EmployeeCode"].Value" />
             <abp-select asp-for="NewEmployee.Designation" asp-items="@Model.Designations" label="@L["EmployeeDesignation"].Value" />
-            <abp-select asp-for="NewEmployee.Department" asp-items="@Model.Department" label="@L["EmployeeDepartment"].Value" />
+            <abp-select asp-for="NewEmployee.Department" asp-items="@Model.Departments" label="@L["EmployeeDepartment"].Value" />
             <abp-input asp-for="NewEmployee.Notes" />
             <abp-radio asp-for="NewEmployee.Status" asp-items="@Model.EmployeeStatus" label="@L["EmployeeStatus"].Value" inline="true" />
 

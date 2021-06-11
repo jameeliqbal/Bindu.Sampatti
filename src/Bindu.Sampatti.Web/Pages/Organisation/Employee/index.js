@@ -87,9 +87,9 @@
 
 
     //ADD NEW DEPOT
-    var createModal = new abp.ModalManager(abp.appPath + "organisation/depot/createModal");
+    var createModal = new abp.ModalManager(abp.appPath + "organisation/employee/createModal");
 
-    $("#NewDepotButton").click(function (e) {
+    $("#NewEmployeeButton").click(function (e) {
         e.preventDefault();
 
         createModal.open();
@@ -97,13 +97,13 @@
 
     createModal.onResult(function (e, d) {
 
-        abp.ui.setBusy("#DepotTable");
-        abp.notify.success(d.responseText.toUpperCase() + " added successfully!", "New Depot");
+        abp.ui.setBusy("#EmployeeTable");
+        abp.notify.success(d.responseText.toUpperCase() + " added successfully!", "New Employee");
     });
 
     createModal.onClose(function () {
 
-        depotDataTable.ajax.reload();
+        employeeDataTable.ajax.reload();
 
     });
 

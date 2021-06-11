@@ -2,6 +2,7 @@
 using Bindu.Sampatti.Departments;
 using Bindu.Sampatti.Depots;
 using Bindu.Sampatti.Designations;
+using Bindu.Sampatti.Employees;
 using Bindu.Sampatti.Locations;
 using Bindu.Sampatti.Plants;
 
@@ -41,6 +42,8 @@ namespace Bindu.Sampatti.Web
             CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Designation.CreateModalModel.CreateDesignationViewModal, CreateDesignationDto>();
             CreateMap<DesignationDto, Bindu.Sampatti.Web.Pages.Organisation.Designation.EditModalModel.EditDesignationViewModal>();
             CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Designation.EditModalModel.EditDesignationViewModal, UpdateDesignationDto>();
+
+            CreateMap<Bindu.Sampatti.Web.Pages.Organisation.Employee.CreateModalModel.CreateEmployeeViewModal, CreateEmployeeDto>();
         }
     }
 }
