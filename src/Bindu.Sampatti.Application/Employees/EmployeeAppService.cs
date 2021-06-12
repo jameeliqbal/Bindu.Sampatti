@@ -222,14 +222,14 @@ namespace Bindu.Sampatti.Employees
             if (sorting.Contains("designationName", StringComparison.OrdinalIgnoreCase))
             {
                 //return sorting.Replace("designationName", "designationName", StringComparison.OrdinalIgnoreCase);
-                return  "designationName";
+                return sorting;// "designationName";
 
             }
 
             if (sorting.Contains("departmentName", StringComparison.OrdinalIgnoreCase))
             {
                 //return sorting.Replace("departmentName", "departmentName", StringComparison.OrdinalIgnoreCase);
-                return   "departmentName";
+                return sorting;// "departmentName";
             }
             return $"employee.{sorting}";
         }
