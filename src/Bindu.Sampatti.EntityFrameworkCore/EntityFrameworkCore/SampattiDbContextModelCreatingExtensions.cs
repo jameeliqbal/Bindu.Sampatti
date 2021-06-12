@@ -1,6 +1,7 @@
 ﻿using Bindu.Sampatti.Departments;
 using Bindu.Sampatti.Depots;
 using Bindu.Sampatti.Designations;
+using Bindu.Sampatti.Employees;
 using Bindu.Sampatti.Locations;
 using Bindu.Sampatti.Plants;
 using Microsoft.EntityFrameworkCore;
@@ -81,6 +82,28 @@ namespace Bindu.Sampatti.EntityFrameworkCore
                     .IsRequired()
                     .HasMaxLength(DesignationConsts.MaxNameLength);
                 b.HasIndex(x => x.Name);
+            });
+
+            builder.Entity<Employee>(b =>
+            {
+                b.ToTable(SampattiConsts.DbTablePrefix + "Employees", SampattiConsts.DbSchema);
+                b.ConfigureByConvention();
+                b.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(EmployeeConsts.MaxNameLength);
+                b.Property(e => e.Code)
+                    .IsRequired()
+                    .HasMaxLength(EmployeeConsts.MaxCodeLength);
+                b.HasIndex(e => new { e.Name, e.Code }); //Ref: https://www.learnentityframeworkcore.com/configuration/fluent-api/hasindex-method
+                b.HasOne<Designation>()
+                    .WithMany()
+                    .HasForeignKey(e => e.Designation)
+                    .IsRequired();
+                b.HasOne<Department>()
+                    .WithMany()
+                    .HasForeignKey(e => e.Department)
+                    .IsRequired();
+
             });
         }
     }

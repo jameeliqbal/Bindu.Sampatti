@@ -1,0 +1,31 @@
+﻿@page
+
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Bindu.Sampatti.Localization
+@using Bindu.Sampatti.Web.Pages.Organisation.Employee
+
+@model EditModalModel
+
+@inject IStringLocalizer<SampattiResource> L
+
+@{
+    Layout = null;
+}
+
+<form asp-page="/organisation/employee/editmodal">
+    <abp-modal>
+        <abp-modal-header title="@L["EmployeeUpdate"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="ExistingEmployee.Id" type="hidden" />
+            <abp-input asp-for="ExistingEmployee.Name" />
+            <abp-input asp-for="ExistingEmployee.Code" />
+            <abp-select asp-for="ExistingEmployee.Designation" asp-items="@Model.Designations" label="@L["EmployeeDesignation"].Value" />
+            <abp-select asp-for="ExistingEmployee.Department" asp-items="@Model.Departments" label="@L["EmployeeDepartment"].Value" />
+            <abp-input asp-for="ExistingEmployee.Notes" />
+            <abp-radio asp-for="ExistingEmployee.Status" asp-items="@Model.EmployeeStatus" label="@L["EmployeeStatus"].Value" inline="true" />
+
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Save|AbpModalButtons.Cancel)"></abp-modal-footer>
+    </abp-modal>
+</form>

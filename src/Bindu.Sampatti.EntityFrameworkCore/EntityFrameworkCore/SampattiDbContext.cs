@@ -10,6 +10,7 @@ using Bindu.Sampatti.Depots;
 using Bindu.Sampatti.Plants;
 using Bindu.Sampatti.Departments;
 using Bindu.Sampatti.Designations;
+using Bindu.Sampatti.Employees;
 
 namespace Bindu.Sampatti.EntityFrameworkCore
 {
@@ -31,6 +32,8 @@ namespace Bindu.Sampatti.EntityFrameworkCore
         public DbSet<Plant> Plants { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Designation> Designations { get; set; }
+
+        public DbSet<Employee> Employees { get; set; }
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside SampattiDbContextModelCreatingExtensions.ConfigureSampatti

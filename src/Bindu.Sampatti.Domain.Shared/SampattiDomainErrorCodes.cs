@@ -8,5 +8,7 @@
         public const string PlantAlreadyExists = "Sampatti:00003";
         public const string DepartmentAlreadyExists = "Sampatti:00004";
         public const string DesignationAlreadyExists = "Sampatti:00005";
-   }
+        public const string EmployeeByNameAlreadyExists = "Sampatti:00006";
+        public const string EmployeeByCodeAlreadyExists = "Sampatti:00007";
+    }
 }

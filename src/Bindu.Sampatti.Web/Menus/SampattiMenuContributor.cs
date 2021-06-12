@@ -50,7 +50,7 @@ namespace Bindu.Sampatti.Web.Menus
 
             var menuOrg = new ApplicationMenuItem(SampattiMenus.Organization, l["Menu:Organization"], "#");
             context.Menu.Items.Insert(4, menuOrg);
-            menuOrg.AddItem(new ApplicationMenuItem(SampattiMenus.Employees, l["Menu:Organization.Employees"], "#"));
+            menuOrg.AddItem(new ApplicationMenuItem(SampattiMenus.Employees, l["Menu:Organization.Employees"], "/organisation/employee"));
             menuOrg.AddItem(new ApplicationMenuItem(SampattiMenus.Designations, l["Menu:Organization.Designations"], "/organisation/designation"));
             menuOrg.AddItem(new ApplicationMenuItem(SampattiMenus.Departments, l["Menu:Organization.Departments"], "/organisation/department"));
             menuOrg.AddItem(new ApplicationMenuItem(SampattiMenus.Locations, l["Menu:Organization.Locations"], "/organisation/location"));
